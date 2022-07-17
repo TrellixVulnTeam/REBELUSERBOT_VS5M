@@ -77,75 +77,41 @@ except:
         )
         quit(1)
 
-    # Logging channel/group configuration.
     BOTLOG_CHATID = os.environ.get("DARKWEB_ID", None)
     try:
-        BOTLOG_CHATID = int(BOTLOG_CHATID)
+        BOTLOG_CHATID = int(DARKWEB_ID)
     except:
         pass
 
-    # Userbot logging feature switch.
+
     HNDLR = os.environ.get("HNDLR", r".")
-
-    # Bleep Blop, this is a bot ;)
+    BOTLOG = os.environ.get("BOTLOG", "False")
     PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
-
     DARKWEB_ID = os.environ.get("DARKWEB_ID", None)
-
-    # Console verbose logging
     CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
-
-    # SQL Database URI
     DB_URI = os.environ.get("DATABASE_URL", None)
-
-    # OCR API key
     OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
-
-    # remove.bg API key
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-
-    # Chrome Driver and Headless Google Chrome Binaries
     CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
-
-    # OpenWeatherMap API Key
     OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
-
-    # Anti Spambot Config
     ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
-
     ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
-    # Heroku Credentials for updater.
     HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
-
-    # Youtube API key
     YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
-
-    # Default .alive name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     AUTONAME = os.environ.get("AUTONAME", None)
     REDIRECTCHANNEL = os.environ.get("REDIRECTCHANNEL", None)
     PING_PIC = os.environ.get("PING_PIC", None)
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
-    
-    # SUDO   
     SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
-
-    # Time & Date - Country and Time Zone
     COUNTRY = str(os.environ.get("COUNTRY", "India"))
-
     TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
-
-    # Clean Welcome
     CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
-
-    # Custom Module
     PM_MASSAGE = os.environ.get("PM_MASSAGE", None)
     CUSTOM_AFK = os.environ.get("CUSTOM_AFK", None)
-
-    # Upstream Repo
     UPSTREAM_REPO_URL = os.environ.get(
         "UPSTREAM_REPO_URL", "https://github.com/TEAMREBELS/REBELBOTSS.git"
     )
