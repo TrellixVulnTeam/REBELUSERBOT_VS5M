@@ -70,7 +70,7 @@ def button(page, modules):
     return [max_pages, buttons]
 
 
-if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
+if Var.BOT_USERNAME is not None and tgbot is not None:
 
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
