@@ -11,8 +11,8 @@ Dark_logo = "./Dark75/DarkWeb_logo.jpg"
 R3b3l0p = DarkWeb.uid
 Dark = f"[{DEFAULTUSER}](tg://user?id={R3b3l0p})"
 
-@dark.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
-@dark.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
@@ -35,8 +35,8 @@ async def send(event):
     else:
         await edit_or_reply(event, "File not found..... Kek")
 
-@dark.on(admin_cmd(pattern="install$", outgoing=True))
-@dark.on(sudo_cmd(pattern="install$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="install$", outgoing=True))
+@bot.on(sudo_cmd(pattern="install$", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
@@ -87,8 +87,8 @@ async def install(event):
             await event.edit(f"**Failed to Install** \n`Error`\n{e}")
             return os.remove(downloaded_file_name)
 
-@dark.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
-@dark.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
 async def uninstall(R3b3l0p):
     if R3b3l0p.fwd_from:
         return
@@ -101,8 +101,8 @@ async def uninstall(R3b3l0p):
     except OSError as e:
         await R3b3l0p.edit(f"Error: {dir_path} : {e.strerror}")
 
-@dark.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
-@dark.on(sudo_cmd(pattern=r"upload (?P<shortname>\w+)$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@bot.on(sudo_cmd(pattern=r"upload (?P<shortname>\w+)$", allow_sudo=True))
 async def unload(event):
     if event.fwd_from:
         return
@@ -115,8 +115,8 @@ async def unload(event):
             "Successfully unloaded {shortname}\n{}".format(shortname, str(e))
         )
 
-@dark.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
-@dark.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@bot.on(sudo_cmd(pattern=r"load (?P<shortname>\w+)$", allow_sudo=True))
 async def load(event):
     if event.fwd_from:
         return
