@@ -1,11 +1,9 @@
-# Thanks to @D3_krish
-# Porting in DARKDarkWeb
 import asyncio
 from telethon import version
 
 from DarkWeb import ALIVE_NAME, darkversion
 from DarkWeb.cmdhelp import CmdHelp
-from DarkWeb.Config.DARK_Config import Config
+from DarkWeb.smex.DARK_Config import Config
 from DarkWeb.utils import admin_cmd, sudo_cmd
 from DarkWeb import *
 
