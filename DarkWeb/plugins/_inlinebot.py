@@ -11,23 +11,32 @@ from DarkWeb.cmdhelp import *
 from Dark.utils import *
 from DarkWeb.smex.DARK_Config import Config
 
-dark_help_pic = Config.HELP_PIC
-Dark_row = Config.BUTTONS_IN_HELP
-Dark_emoji = Config.EMOJI_IN_HELP
+REBEL_help_pic = Config.HELP_PIC
+REBEL_row = Config.BUTTONS_IN_HELP
+REBEL_emoji = Config.EMOJI_IN_HELP
+# thats how a lazy guy imports
+# REBELBOT
 
-if dark_help_pic:
-    _file_to_replace = dark_help_pic
-    dark_help_pic = dark_help_pic
+DEFAULTUSER = ALIVE_NAME or "REBEL User"
+
+USERID = bot.uid
+
+mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+
+# username code
+
+if REBEL_help_pic:
+    _file_to_replace = REBEL_help_pic
+    REBEL_help_pic = REBEL_help_pic
 else:
     _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
 
-DEFAULTUSER = Config.ALIVE_NAME or "DARK WEB"
-USERID = bot.uid
-mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+
+# help pic code
+
 
 def button(page, modules):
-    Row = Dark_row
-    Column = 3
+    Row = REBEL_row
 
     modules = sorted([modul for modul in modules if not modul.startswith("_")])
     pairs = list(map(list, zip(modules[::2], modules[1::2])))
@@ -35,46 +44,47 @@ def button(page, modules):
         pairs.append([modules[-1]])
     max_pages = ceil(len(pairs) / Row)
     pairs = [pairs[i : i + Row] for i in range(0, len(pairs), Row)]
-    buttons = []
-    for pairs in pairs[page]:
-        buttons.append(
-            [
-                custom.Button.inline(f"{Dark_emoji} " + pair, data=f"Information[{page}]({pair})")
-                for pair in pairs
-            ]
-        )
+    buttons = [
+        [
+            custom.Button.inline(
+                f"{REBEL_emoji} " + pair, data=f"Information[{page}]({pair})"
+            )
+            for pair in pairs
+        ]
+        for pairs in pairs[page]
+    ]
 
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏰᎯᏣᏦ {Dark_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+                f"◀️ ᏰᎯᏣᏦ {REBEL_emoji}",
+                data=f"page({(max_pages - 1) if page == 0 else (page - 1)})",
             ),
+            custom.Button.inline(f"•{REBEL_emoji} ❌ {REBEL_emoji}•", data="close"),
             custom.Button.inline(
-               f"•{Dark_emoji} ❌ {Dark_emoji}•", data="close"
-            ),
-            custom.Button.inline(
-               f"{Dark_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+                f"{REBEL_emoji} ᏁᏋﾒᎿ ▶️",
+                data=f"page({0 if page == (max_pages - 1) else page + 1})",
             ),
         ]
     )
     return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in DarkWeb channel to get this module work...
 
-    modules = CMD_HELP
-if Var.BOT_USERNAME is not None and tgbot is not None:
+
+if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
+
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@DarkWeb_SUPPORT":
+        if event.query.user_id == bot.uid and query == "@REBELBOT_SUPPORT":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.photo(
-                text=f"** {mention} \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
+                text=f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
                 file=_file_to_replace,
                 buttons=veriler[1],
-                link_preview=True,
+                link_preview=False,
             )
         elif query.startswith("http"):
             part = query.split(" ")
@@ -84,63 +94,70 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
                 buttons=[[custom.Button.url("URL", part[0])]],
                 link_preview=True,
             )
-        elif event.text=='':
+        elif event.text == "":
             result = builder.article(
-                "@DarkWeb_SUPPORT",
-                text=f"""**Hey![🤗]({Dark_help_pic}) This is [DarkWeb.](https://t.me/DarkWeb_SUPPORT)\nYou can know more about me from the links given below 👇**""",
+                "@REBELBOT_SUPPORT",
+                text="**Hey!This is [REBELBOT.](https://t.me/REBELBOT_SUPPORT)\nYou can know more about me from the links given below 👇**",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DarkWeb_SUPPORT"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/Dark_BOT_CHATING"
+                            "🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"
+                        ),
+                        custom.Button.url(
+                            "⚡ GROUP ⚡", "https://t.me/REBEL_BOT_CHATING"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "🔰 REPO 🔰", "https://github.com/Dark75/DarkWebOP"),
-                        custom.Button.url
-                    (
-                            "🔰 TUTORIAL 🔰", ""
-                    )
+                            "🔰 REPO 🔰", "https://github.com/REBEL75/REBELSBOT"
+                        ),
+                        custom.Button.url("🔰 TUTORIAL 🔰", ""),
                     ],
                 ],
-                link_preview=True,
+                link_preview=False,
             )
+
         await event.answer([result] if result else None)
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN DarkWeb AND USE. © DarkWeb ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"** {mention} \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
+            f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
             buttons=veriler[1],
-            link_preview=True,
+            link_preview=False,
         )
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await delete_Dark(event,
-              f"DarkWeb Menu Provider Is now Closed\n\n         **[© DarkWeb ™](t.me/DarkWeb_SUPPORT)**", 5, link_preview=True
+            await delete_REBEL(
+                event,
+                "⚜️REBELBOT Menu Provider Is now Closed⚜️\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**",
+                5,
+                link_preview=False,
             )
+
         else:
-            Dark_alert = "HELLO THERE. PLEASE MAKE YOUR OWN DarkWeb AND USE. © DarkWeb ™"
-            await event.answer(Dark_alert, cache_time=0, alert=True)
+            REBEL_alert = (
+                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™"
+            )
+            await event.answer(REBEL_alert, cache_time=0, alert=True)
 
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
     )
     async def Information(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN DarkWeb AND USE. © DarkWeb ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
                 cache_time=0,
                 alert=True,
             )
@@ -171,9 +188,9 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         callbackquery.CallbackQuery(data=compile(b"commands\[(.*)\[(\d*)\]\]\((.*)\)"))
     )
     async def commands(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN DarkWeb AND USE. © DarkWeb ™",
+                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
                 cache_time=0,
                 alert=True,
             )
@@ -184,14 +201,14 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
 
         result = f"**📗 File:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
+            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 result += f"**⚠️ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
         else:
             result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
+            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
                 result += f"**⚠️ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
@@ -205,7 +222,9 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             result += f"**💬 Explanation:** `{command['usage']}`\n\n"
         else:
             result += f"**💬 Explanation:** `{command['usage']}`\n"
-            result += f"**⌨️ For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
+            result += (
+                f"**⌨️ For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
+            )
 
         await event.edit(
             result,
@@ -214,3 +233,4 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             ],
             link_preview=False,
         )
+
