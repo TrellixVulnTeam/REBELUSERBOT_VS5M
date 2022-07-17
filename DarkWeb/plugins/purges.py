@@ -1,11 +1,13 @@
 import asyncio
-
+from asyncio import sleep
 import telethon.utils
 from telethon import events
-from Dark.utils import admin_cmd, sudo_cmd, edit_or_reply
+from telethon.errors import rpcbaseerrors
+
+from DarkWeb import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from Dark.utils import admin_cmd, sudo_cmd, errors_handler, edit_or_reply
 from DarkWeb.cmdhelp import CmdHelp
 from Dark.util import re
-
 
 async def get_target_message(event):
     if event.is_reply and (await event.get_reply_message()).sender_id == borg.uid:
@@ -48,6 +50,82 @@ async def delete(event):
             await borg.edit_message(chat, target, text)
         else:
             await borg.delete_messages(chat, target, revoke=True)
+
+@Dark.on(admin_cmd(pattern=r"purge", outgoing=True))
+@Dark.on(sudo_cmd(pattern=r"purge", allow_sudo=True))
+@errors_handler
+async def fastpurger(purg):
+    """ For .purge command, purge all messages starting from the reply. """
+    chat = await purg.get_input_chat()
+    msgs = []
+    count = 0
+
+    async for msg in purg.client.iter_messages(chat, min_id=purg.reply_to_msg_id):
+        msgs.append(msg)
+        count = count + 1
+        msgs.append(purg.reply_to_msg_id)
+        if len(msgs) == 100:
+            await purg.client.delete_messages(chat, msgs)
+            msgs = []
+
+    if msgs:
+        await purg.client.delete_messages(chat, msgs)
+    done = await purg.client.send_message(
+        purg.chat_id,
+        "`Fast purge complete!\n`Purged " + str(count) + " messages.",
+    )
+
+    if BOTLOG:
+        await purg.client.send_message(
+            BOTLOG_CHATID, "Purge of " + str(count) + " messages done successfully."
+        )
+    await sleep(2)
+    await done.delete()
+
+
+# @register(outgoing=True, pattern="^.purgeme")
+@Dark.on(admin_cmd(pattern=r"purgeme", outgoing=True))
+@Dark.on(sudo_cmd(pattern=r"purgeme", allow_sudo=True))
+@errors_handler
+async def purgeme(delme):
+    """ For .purgeme, delete x count of your latest message."""
+    message = delme.text
+    count = int(message[9:])
+    i = 1
+
+    async for message in delme.client.iter_messages(delme.chat_id, from_user="me"):
+        if i > count + 1:
+            break
+        i = i + 1
+        await message.delete()
+
+    smsg = await delme.client.send_message(
+        delme.chat_id,
+        "`Purge complete!` Purged " + str(count) + " messages.",
+    )
+    if BOTLOG:
+        await delme.client.send_message(
+            BOTLOG_CHATID, "Purge of " + str(count) + " messages done successfully."
+        )
+    await sleep(2)
+    i = 1
+    await smsg.delete()
+
+
+@Dark.on(admin_cmd(pattern=r"sd", outgoing=True))
+@Dark.on(sudo_cmd(pattern=r"sd", allow_sudo=True))
+@errors_handler
+async def selfdestruct(destroy):
+    """ For .sd command, make seflf-destructable messages. """
+    message = destroy.text
+    counter = int(message[4:6])
+    text = str(destroy.text[6:])
+    await destroy.delete()
+    smsg = await destroy.client.send_message(destroy.chat_id, text)
+    await sleep(counter)
+    await smsg.delete()
+    if BOTLOG:
+        await destroy.client.send_message(BOTLOG_CHATID, "sd query done successfully")
 
 CmdHelp("purge").add_command(
   "del", "<reply to a msg>", "Deletes the replied msg."
