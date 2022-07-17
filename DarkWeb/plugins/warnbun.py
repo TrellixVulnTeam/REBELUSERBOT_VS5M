@@ -1,4 +1,3 @@
-""".admin Plugin for @UniBorg"""
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from Dark.utils import admin_cmd, sudo_cmd, edit_or_reply
@@ -24,12 +23,6 @@ async def _(event):
         await event.reply(mentions)
     await event.delete()
 
-
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
-
-
 @dark.on(admin_cmd(pattern=r"warn2", outgoing=True))
 @dark.on(sudo_cmd(pattern=r"warn2", allow_sudo=True))
 async def _(event):
@@ -48,11 +41,6 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
-
-
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
 
 
 @dark.on(admin_cmd(pattern=r"warn3", outgoing=True))
@@ -75,11 +63,6 @@ async def _(event):
     await event.delete()
 
 
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
-
-
 @dark.on(admin_cmd(pattern=r"warn0", outgoing=True))
 @dark.on(sudo_cmd(pattern=r"warn0", allow_sudo=True))
 async def _(event):
@@ -96,11 +79,6 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
-
-
-""".admin Plugin for @UniBorg"""
-from telethon.tl.types import ChannelParticipantsAdmins
-from uniborg.util import admin_cmd
 
 
 @dark.on(admin_cmd(pattern=r"ocb"))
