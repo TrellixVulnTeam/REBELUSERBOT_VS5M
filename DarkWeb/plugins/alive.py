@@ -3,7 +3,7 @@
 import asyncio
 from telethon import version
 
-from DarkWeb import ALIVE_NAME, DARKversion
+from DarkWeb import ALIVE_NAME, darkversion
 from DarkWeb.cmdhelp import CmdHelp
 from DarkWeb.Config.DARK_Config import Config
 from DarkWeb.utils import admin_cmd, sudo_cmd
