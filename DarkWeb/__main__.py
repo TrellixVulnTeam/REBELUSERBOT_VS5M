@@ -8,7 +8,7 @@ from var import Var
 from DarkWeb.smex.DARK_Config import Config
 from DarkWeb import *
 from DarkWeb.utils import load_module
-from DarkWeb import LOAD_PLUG, Darkversion
+from DarkWeb import LOAD_PLUG, darkversion
 from pathlib import Path
 import asyncio
 import telethon.utils
