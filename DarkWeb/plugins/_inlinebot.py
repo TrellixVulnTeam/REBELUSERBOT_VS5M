@@ -54,6 +54,7 @@ else:
             ),
         ]
     )
+    return [max_pages, buttons]
 
     modules = CMD_HELP
 if Var.BOT_USERNAME is not None and tgbot is not None:
@@ -77,7 +78,31 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
                 text=f"**File uploaded successfully to {part[2]} site.\n\nUpload Time : {part[1][:3]} second\n[‏‏‎ ‎]({part[0]})",
                 buttons=[[custom.Button.url("URL", part[0])]],
                 link_preview=True,
+            ) elif event.text=='':
+            result = builder.article(
+                "@DarkWeb_SUPPORT",
+                text=f"""**Hey![🤗]({Dark_help_pic}) This is [DarkWeb.](https://t.me/DarkWeb_SUPPORT)\nYou can know more about me from the links given below 👇**""",
+                buttons=[
+                    [
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DarkWeb_SUPPORT"),
+                        custom.Button.url(
+                            "⚡ GROUP ⚡", "https://t.me/Dark_BOT_CHATING"
+                        ),
+                    ],
+                    [
+                        custom.Button.url(
+                            "🔰 REPO 🔰", "https://github.com/Dark75/DarkWebOP"),
+                        custom.Button.url
+                    (
+                            "🔰 TUTORIAL 🔰", ""
+                    )
+                    ],
+                ],
+                link_preview=True,
             )
+        await event.answer([result] if result else None)
+
+
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
