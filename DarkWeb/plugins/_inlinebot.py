@@ -21,6 +21,9 @@ if dark_help_pic:
 else:
     _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
 
+DEFAULTUSER = Config.ALIVE_NAME or "DARK WEB"
+USERID = bot.uid
+mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 def button(page, modules):
     Row = Dark_row
