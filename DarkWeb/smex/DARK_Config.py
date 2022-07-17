@@ -17,7 +17,7 @@ if ENV:
         GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
         BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
         BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
-        BOTLOG = sb(os.environ.get("BOTLOG", "False"))
+        BOTLOG = os.environ.get("BOTLOG", "False")
         DUAL_LOG = os.environ.get("DUAL_LOG", None)
         MAX_MESSAGE_SIZE_LIMIT = 4095
         UB_BLACK_LIST_CHAT = {
