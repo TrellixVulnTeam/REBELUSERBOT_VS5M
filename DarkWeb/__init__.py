@@ -10,7 +10,7 @@ from DarkWeb.helpers import functions as simpdef
 from var import Var
 
 StartTime = time.time()
-Darkversion = "1.0"
+darkversion = "1.0"
 botversion = "1.0"
 
 os.system("pip install --upgrade pip")
