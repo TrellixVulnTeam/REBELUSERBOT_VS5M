@@ -14,12 +14,17 @@ from DarkWeb.smex.DARK_Config import Config
 Dark_help_pic = Config.HELP_PIC
 Dark_row = Config.BUTTONS_IN_HELP
 Dark_emoji = Config.EMOJI_IN_HELP
-# thats how a lazy guy imports
-# DarkWeb
 
 def button(page, modules):
     Row = Dark_row
     Column = 3
+    
+if REBEL_help_pic:
+    _file_to_replace = REBEL_help_pic
+    REBEL_help_pic = REBEL_help_pic
+else:
+    _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
+
 
     modules = sorted([modul for modul in modules if not modul.startswith("_")])
     pairs = list(map(list, zip(modules[::2], modules[1::2])))
@@ -59,12 +64,11 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@DarkWeb_SUPPORT":
+        if event.query.user_id == bot.uid and query == "DarkWeb_Help":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
-            result = await builder.article(
-                f"Hey! Only use .help please",
-                text=f"**Running DarkWeb**[⚡🔥]({Dark_help_pic})\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+            result = await builder.photo(
+                text=f"** {mention} \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=True,
             )
@@ -76,29 +80,6 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
                 buttons=[[custom.Button.url("URL", part[0])]],
                 link_preview=True,
             )
-        elif event.text=='':
-            result = builder.article(
-                "@DarkWeb_SUPPORT",
-                text=f"""**Hey![🤗]({Dark_help_pic}) This is [DarkWeb.](https://t.me/DarkWeb_SUPPORT)\nYou can know more about me from the links given below 👇**""",
-                buttons=[
-                    [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DarkWeb_SUPPORT"),
-                        custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/Dark_BOT_CHATING"
-                        ),
-                    ],
-                    [
-                        custom.Button.url(
-                            "🔰 REPO 🔰", "https://github.com/Dark75/DarkWebOP"),
-                        custom.Button.url
-                    (
-                            "🔰 TUTORIAL 🔰", ""
-                    )
-                    ],
-                ],
-                link_preview=True,
-            )
-        await event.answer([result] if result else None)
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
