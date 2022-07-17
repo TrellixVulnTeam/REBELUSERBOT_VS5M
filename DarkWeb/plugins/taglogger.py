@@ -4,10 +4,10 @@ from telethon.utils import get_display_name
 
 from DarkWeb.smex.DARK_Config import Config
 
-if Config.TAG_LOGGER:
-    tagger = int(Config.TAG_LOGGER)
+if Config.DARKWEB_ID:
+    tagger = int(Config.DARKWEB_ID)
 
-if Config.TAG_LOGGER:
+if Config.DARKWEB_ID:
 
     @Dark.on(
         events.NewMessage(
