@@ -11,11 +11,16 @@ from DarkWeb.cmdhelp import *
 from Dark.utils import *
 from DarkWeb.smex.DARK_Config import Config
 
-Dark_help_pic = Config.HELP_PIC
+dark_help_pic = Config.HELP_PIC
 Dark_row = Config.BUTTONS_IN_HELP
 Dark_emoji = Config.EMOJI_IN_HELP
-# thats how a lazy guy imports
-# DarkWeb
+
+if dark_help_pic:
+    _file_to_replace = dark_help_pic
+    dark_help_pic = dark_help_pic
+else:
+    _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
+
 
 def button(page, modules):
     Row = Dark_row
@@ -62,9 +67,8 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         if event.query.user_id == bot.uid and query == "@DarkWeb_SUPPORT":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
-            result = await builder.article(
-                f"Hey! Only use .help please",
-                text=f"**Running DarkWeb**[⚡🔥]({Dark_help_pic})\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+            result = await builder.photo(
+                text=f"** {mention} \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=True,
             )
@@ -111,7 +115,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF DarkWeb[⚡🔥]({Dark_help_pic})[.](https://t.me/DarkWeb_SUPPORT) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"** {mention} \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
             buttons=veriler[1],
             link_preview=True,
         )
@@ -120,7 +124,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_Dark(event,
-              f"⚜️DarkWeb Menu Provider Is now Closed[⚜️]({Dark_help_pic})\n\n         **[© DarkWeb ™](t.me/DarkWeb_SUPPORT)**[⚡🔥]({Dark_help_pic})", 5, link_preview=True
+              f"DarkWeb Menu Provider Is now Closed\n\n         **[© DarkWeb ™](t.me/DarkWeb_SUPPORT)**", 5, link_preview=True
             )
         else:
             Dark_alert = "HELLO THERE. PLEASE MAKE YOUR OWN DarkWeb AND USE. © DarkWeb ™"
