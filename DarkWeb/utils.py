@@ -62,7 +62,7 @@ def load_module(shortname):
         mod.Config = Config
         mod.borg = bot
         mod.DarkBOT = bot
-        mod.Dark = bot
+        mod.dark = bot
         mod.edit_or_reply = edit_or_reply
         mod.delete_Dark = delete_Dark
         mod.media_type = media_type
