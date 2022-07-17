@@ -26,7 +26,7 @@ pm_caption += (
 )
 pm_caption += "┏━━━━━━━━━━━━━\n"
 pm_caption += f"┣•➳➠  `ᴛᴇʟᴇᴛʜᴏɴ:` `{version.__version__}` \n"
-pm_caption += f"┣•➳➠ `ᴠᴇʀsɪᴏɴ:` `{DARKversion}`\n"
+pm_caption += f"┣•➳➠ `ᴠᴇʀsɪᴏɴ:` `{darkversion}`\n"
 pm_caption += f"┣•➳➠ `sᴜᴅᴏ:` `{sudou}`\n"
 pm_caption += "┣•➳➠ `ᴄʜᴀɴɴᴇʟ:` [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
 pm_caption += "┣•➳➠ `ᴄʀᴇᴀᴛᴏʀ:` [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
