@@ -54,8 +54,6 @@ else:
             ),
         ]
     )
-    return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in DarkWeb channel to get this module work...
 
     modules = CMD_HELP
 if Var.BOT_USERNAME is not None and tgbot is not None:
