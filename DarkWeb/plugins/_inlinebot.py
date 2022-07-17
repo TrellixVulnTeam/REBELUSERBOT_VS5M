@@ -14,14 +14,14 @@ from DarkWeb.smex.DARK_Config import Config
 Dark_help_pic = Config.HELP_PIC
 Dark_row = Config.BUTTONS_IN_HELP
 Dark_emoji = Config.EMOJI_IN_HELP
-
+dark_help_pic = Config.HELP_PIC
 def button(page, modules):
     Row = Dark_row
     Column = 3
     
-if REBEL_help_pic:
-    _file_to_replace = REBEL_help_pic
-    REBEL_help_pic = REBEL_help_pic
+if dark_help_pic:
+    _file_to_replace = dark_help_pic
+    dark_help_pic = dark_help_pic
 else:
     _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
 
