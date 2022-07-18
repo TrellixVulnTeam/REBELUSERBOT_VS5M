@@ -32,7 +32,8 @@ KANGING_STR = [
 ]
 
 DarkWeb = Config.ALIVE_NAME
-
+else:
+    DarkWeb = "ɖaʀӄաɛɮ ɮօȶ"
 
 @dark.on(admin_cmd(outgoing=True, pattern="kang"))
 @dark.on(sudo_cmd(pattern="kang", allow_sudo=True))
