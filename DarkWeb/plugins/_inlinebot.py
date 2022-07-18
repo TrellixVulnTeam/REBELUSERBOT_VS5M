@@ -77,7 +77,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@REBELBOT_SUPPORT":
+        if event.query.user_id == bot.uid and query == "darkweb_help":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.photo(
