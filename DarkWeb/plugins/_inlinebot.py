@@ -1,29 +1,37 @@
+
 from math import ceil
 from re import compile
-import asyncio
 
+from REBELBOT.utils import *
 from telethon.events import InlineQuery, callbackquery
 from telethon.sync import custom
-from telethon.tl.functions.channels import JoinChannelRequest
 
-from DarkWeb import *
-from DarkWeb.cmdhelp import *
-from Dark.utils import *
-from DarkWeb.smex.DARK_Config import Config
+from userbot import *
+from userbot.cmdhelp import *
+from userbot.Config import Config
 
 REBEL_help_pic = Config.HELP_PIC
 REBEL_row = Config.BUTTONS_IN_HELP
 REBEL_emoji = Config.EMOJI_IN_HELP
+# thats how a lazy guy imports
+# REBELBOT
 
 DEFAULTUSER = ALIVE_NAME or "REBEL User"
+
 USERID = bot.uid
+
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+
+# username code
 
 if REBEL_help_pic:
     _file_to_replace = REBEL_help_pic
     REBEL_help_pic = REBEL_help_pic
 else:
     _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
+
+
+# help pic code
 
 
 def button(page, modules):
@@ -62,18 +70,18 @@ def button(page, modules):
 
 
 if Var.BOT_USERNAME is not None and tgbot is not None:
+
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "darkweb_help":
+        if event.query.user_id == bot.uid and query == "@REBELBOT_SUPPORT":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
-            result = await builder.article(
-            f"Hey! Only use .help please",
+            result = await builder.photo(
                 text=f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
-            #    file=_file_to_replace,
+                file=_file_to_replace,
                 buttons=veriler[1],
                 link_preview=False,
             )
