@@ -39,6 +39,7 @@ pm_caption += " [🔥𝚁𝙴𝙿𝙾🔥](https://github.com/TEAMDARKS/DarkWeb)
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
 @bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
 async def amireallyalive(alive):
+    DarkWeb = await edit_or_reply("`Building Alive....`")
     await alive.get_chat()
     await alive.delete()
     on = await borg.send_file(alive.chat_id, file=file1, caption=pm_caption)
