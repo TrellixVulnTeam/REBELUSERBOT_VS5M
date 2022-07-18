@@ -2,7 +2,6 @@
 from math import ceil
 from re import compile
 
-from REBELBOT.utils import *
 from telethon.events import InlineQuery, callbackquery
 from telethon.sync import custom
 
