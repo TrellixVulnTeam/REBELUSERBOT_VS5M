@@ -1,10 +1,9 @@
-from DarkWeb.smex.DARK_Config import Config
 import asyncio
-
 import requests
 from telethon import functions
 
-from DarkWeb import ALIVE_NAME, CMD_LIST, SUDO_LIST
+from DarkWeb.smex.DARK_Config import Config
+from DarkWeb import CMD_LIST, SUDO_LIST
 from Dark.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 @bot.on(admin_cmd(pattern="help ?(.*)", outgoing=True))
@@ -15,7 +14,7 @@ async def yardim(event):
     tgbotusername = Config.BOT_USERNAME
     input_str = event.pattern_match.group(1)
     if tgbotusername is not None or REBEL_input == "text":
-        results = await event.client.inline_query(tgbotusername, "darkweb_help")
+        results = await event.client.inline_query(tgbotusername, "@REBELBOT_SUPPORT")
         await results[0].click(
             event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
         )
