@@ -31,9 +31,13 @@ KANGING_STR = [
     "Mr.Steal Your Sticker is stealing this sticker... ",
 ]
 
-DarkWeb = Config.ALIVE_NAME
+ddark = Config.ALIVE_NAME
+if ddark:
+    DarkWeb = ddark
+    DarkWeb = DarkWeb
 else:
     DarkWeb = "ɖaʀӄաɛɮ ɮօȶ"
+
 
 @dark.on(admin_cmd(outgoing=True, pattern="kang"))
 @dark.on(sudo_cmd(pattern="kang", allow_sudo=True))
@@ -259,7 +263,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            f"⚡** This Sticker iz [kanged](t.me/addstickers/{packname}) successfully to your pack **⚡",
+            f" [Sticker iz kanged successfully to your pack](t.me/addstickers/{packname}) ",
             parse_mode="md",
         )
 
