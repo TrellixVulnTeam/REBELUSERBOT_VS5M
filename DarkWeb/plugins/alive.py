@@ -61,9 +61,7 @@ async def reply_id(event):
 DEFAULTUSER = ALIVE_NAME or "DARK WEB"
 DARK_IMG = Config.ALIVE_PIC
 CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "LEGENDARY AF DARK WEB"
-USERID = bot.uid
-mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
-
+mention = f"[{DEFAULTUSER}](tg://user?id={bot.uid})"
 
 def get_readable_time(seconds: int) -> str:
     count = 0
