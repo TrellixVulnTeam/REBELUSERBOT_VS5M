@@ -92,10 +92,10 @@ def get_readable_time(seconds: int) -> str:
 
 uptime = get_readable_time((time.time() - StartTime))
 
-
 @dark.on(admin_cmd(outgoing=True, pattern="rebel$"))
 @dark.on(sudo_cmd(pattern="rebel$", allow_sudo=True))
 async def amireallyalive(alive):
+    DarkWeb = await edit_or_reply(alive, "`ɖaʀӄաɛɮ ɮօȶ ɨֆ օռʟɨռɛ`")
     if alive.fwd_from:
         return
     reply_to_id = await reply_id(alive)
