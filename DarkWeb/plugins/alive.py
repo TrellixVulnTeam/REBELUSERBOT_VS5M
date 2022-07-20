@@ -101,15 +101,15 @@ async def amireallyalive(alive):
     reply_to_id = await reply_id(alive)
 
     if DARK_IMG:
-        REBEL_caption = f"**↼ Øwñêr ⇀ : {mention}"
+        REBEL_caption = f"**↼ Øwñêr ⇀ : {mention}\n"
         REBEL_caption += "__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
-        REBEL_caption +=   "╭──────────────"
-        REBEL_caption += f"**┣─ ➣ Telethon ➛** `1.24.0`\n"
-        REBEL_caption += f"**┣─ ➣ ɖǟʀӄաɛɮ  ➛** `1.0`\n"
-        REBEL_caption += f"**┣─ ➣ Sudo ➛    ** ``\n"
-        REBEL_caption += f"**┣─ ➣ Uptime ➛  ** `{uptime}`\n"
-        REBEL_caption += f"**┣─ ➣ Ping ➛    ** `{xnxx}`\n"
-        REBEL_caption +=   "╰──────────────"
+        REBEL_caption += "╭──────────────\n"
+        REBEL_caption += f"┣─ ➣ Telethon ➛ `1.24.0`\n"
+        REBEL_caption += f"┣─ ➣ ɖǟʀӄաɛɮ  ➛ `1.0`\n"
+        REBEL_caption += f"┣─ ➣ Sudo ➛     ``\n"
+        REBEL_caption += f"┣─ ➣ Uptime ➛   `{uptime}`\n"
+        REBEL_caption += f"┣─ ➣ Ping ➛     `{xnxx}`\n"
+        REBEL_caption += "╰──────────────"
         await alive.client.send_file(
             alive.chat_id, DARK_IMG, caption=REBEL_caption, reply_to=reply_to_id
         )
@@ -117,15 +117,15 @@ async def amireallyalive(alive):
     else:
         await edit_or_reply(
             alive,
-            f"**↼ Øwñêr ⇀ : {mention}"
+            f"**↼ Øwñêr ⇀ : {mention}\n"
             f"__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
-               "╭──────────────"
-            f"**┣─ ➣ Telethon ➛** `1.24.0`\n"
-            f"**┣─ ➣ ɖǟʀӄաɛɮ  ➛** `1.0`\n"
-            f"**┣─ ➣ Sudo ➛    ** ``\n"
-            f"**┣─ ➣ Uptime ➛  ** `{uptime}`\n"
-            f"**┣─ ➣ Ping ➛    ** `{xnxx}`\n"
-               "╰──────────────"
+            "╭──────────────\n"
+            f"┣─ ➣ Telethon ➛ `1.24.0`\n"
+            f"┣─ ➣ ɖǟʀӄաɛɮ  ➛ `1.0`\n"
+            f"┣─ ➣ Sudo ➛     ``\n"
+            f"┣─ ➣ Uptime ➛   `{uptime}`\n"
+            f"┣─ ➣ Ping ➛     `{xnxx}`\n"
+            "╰──────────────"
             ,
         )
 
