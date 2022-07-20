@@ -101,7 +101,7 @@ async def amireallyalive(alive):
     reply_to_id = await reply_id(alive)
 
     if DARK_IMG:
-        REBEL_caption = f"**↼ Øwñêr ⇀ : {mention}
+        REBEL_caption = f"**↼ Øwñêr ⇀ : {mention}"
         REBEL_caption += "__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
         REBEL_caption +=   "╭──────────────"
         REBEL_caption += f"**┣─ ➣ Telethon ➛** `1.24.0`\n"
@@ -117,7 +117,7 @@ async def amireallyalive(alive):
     else:
         await edit_or_reply(
             alive,
-            f"**↼ Øwñêr ⇀ : {mention}
+            f"**↼ Øwñêr ⇀ : {mention}"
             f"__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
                "╭──────────────"
             f"**┣─ ➣ Telethon ➛** `1.24.0`\n"
