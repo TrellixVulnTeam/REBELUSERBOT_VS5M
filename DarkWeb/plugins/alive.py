@@ -89,7 +89,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 uptime = get_readable_time((time.time() - StartTime))
-
+    xnxx = (end - start).microseconds / 1000
+    
 @dark.on(admin_cmd(outgoing=True, pattern="rebel$"))
 @dark.on(sudo_cmd(pattern="rebel$", allow_sudo=True))
 async def amireallyalive(alive):
@@ -99,13 +100,15 @@ async def amireallyalive(alive):
     reply_to_id = await reply_id(alive)
 
     if DARK_IMG:
-        REBEL_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        REBEL_caption += "≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
-        REBEL_caption += "__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n\n"
-        REBEL_caption += "**➪ ᴛᴇʟᴇᴛʜᴏɴ :** `1.24.0`\n"
-        REBEL_caption += f"**➪ ʀᴇʙᴇʟʙᴏᴛ :**`3.2`\n"
-        REBEL_caption += f"**➪ ᴜᴘᴛɪᴍᴇ   :** `{uptime}\n`"
-        REBEL_caption += f"**➪ ᴍᴀsᴛᴇʀ    :** {mention}\n"
+        REBEL_caption = f"**↼ Øwñêr ⇀ : {mention}
+        REBEL_caption += "__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
+        REBEL_caption +=   "╭──────────────"
+        REBEL_caption += f"**┣─ ➣ Telethon ➛** `1.24.0`\n"
+        REBEL_caption += f"**┣─ ➣ ɖǟʀӄաɛɮ  ➛** `1.0`\n"
+        REBEL_caption += f"**┣─ ➣ Sudo ➛    ** ``\n"
+        REBEL_caption += f"**┣─ ➣ Uptime ➛  ** `{uptime}`\n"
+        REBEL_caption += f"**┣─ ➣ Ping ➛    ** `{xnxx}`\n"
+        REBEL_caption +=   "╰──────────────"
         await alive.client.send_file(
             alive.chat_id, DARK_IMG, caption=REBEL_caption, reply_to=reply_to_id
         )
@@ -115,11 +118,13 @@ async def amireallyalive(alive):
             alive,
             f"**↼ Øwñêr ⇀ : {mention}
             f"__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
-             "╭──────────────"
+               "╭──────────────"
             f"**┣─ ➣ Telethon ➛** `1.24.0`\n"
             f"**┣─ ➣ ɖǟʀӄաɛɮ  ➛** `1.0`\n"
             f"**┣─ ➣ Sudo ➛    ** ``\n"
-            f"**┣─ ➣ Uptime ➛  :** `{uptime}`\n"
+            f"**┣─ ➣ Uptime ➛  ** `{uptime}`\n"
+            f"**┣─ ➣ Ping ➛    ** `{xnxx}`\n"
+               "╰──────────────"
             ,
         )
 
