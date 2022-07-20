@@ -93,7 +93,7 @@ uptime = get_readable_time((time.time() - StartTime))
 @dark.on(admin_cmd(outgoing=True, pattern="rebel$"))
 @dark.on(sudo_cmd(pattern="rebel$", allow_sudo=True))
 async def amireallyalive(alive):
-    smexxx = await eor(event, "`Building Alive....`")
+    smexxx = await edit_or_reply(alive, "`Building Alive....`")
     if alive.fwd_from:
         return
     reply_to_id = await reply_id(alive)
