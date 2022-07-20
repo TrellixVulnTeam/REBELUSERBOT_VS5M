@@ -106,9 +106,9 @@ async def amireallyalive(alive):
         REBEL_caption += "╭──────────────\n"
         REBEL_caption += f"┣─ ➣ Telethon ➛ `1.24.0`\n"
         REBEL_caption += f"┣─ ➣ ɖǟʀӄաɛɮ  ➛ `1.0`\n"
-        REBEL_caption += f"┣─ ➣ Sudo ➛     ``\n"
-        REBEL_caption += f"┣─ ➣ Uptime ➛   `{uptime}`\n"
-        REBEL_caption += f"┣─ ➣ Ping ➛     `{xnxx}`\n"
+        REBEL_caption += f"┣─ ➣ Sudo ➛    `{sudou}`\n"
+        REBEL_caption += f"┣─ ➣ Uptime ➛ `{uptime}`\n"
+        REBEL_caption += f"┣─ ➣ Ping ➛   `{xnxx}`\n"
         REBEL_caption += "╰──────────────"
         await alive.client.send_file(
             alive.chat_id, DARK_IMG, caption=REBEL_caption, reply_to=reply_to_id
@@ -122,9 +122,9 @@ async def amireallyalive(alive):
             "╭──────────────\n"
             f"┣─ ➣ Telethon ➛ `1.24.0`\n"
             f"┣─ ➣ ɖǟʀӄաɛɮ  ➛ `1.0`\n"
-            f"┣─ ➣ Sudo ➛     ``\n"
-            f"┣─ ➣ Uptime ➛   `{uptime}`\n"
-            f"┣─ ➣ Ping ➛     `{xnxx}`\n"
+            f"┣─ ➣ Sudo ➛     `{sudou}`\n"
+            f"┣─ ➣ Uptime ➛ `{uptime}`\n"
+            f"┣─ ➣ Ping ➛   `{xnxx}`\n"
             "╰──────────────"
             ,
         )
