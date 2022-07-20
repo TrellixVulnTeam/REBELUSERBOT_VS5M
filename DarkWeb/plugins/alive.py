@@ -113,13 +113,14 @@ async def amireallyalive(alive):
     else:
         await edit_or_reply(
             alive,
-            f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-            f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
-            f"     __**ʙᴏᴛ sᴛᴀᴛᴜs**__\n\n"
-            f"**➪ ᴛᴇʟᴇᴛʜᴏɴ :** `1.24.0`\n"
-            f"**➪ ʀᴇʙᴇʟʙᴏᴛ :** `3.2`\n"
-            f"**➪ ᴜᴘᴛɪᴍᴇ      :** `{uptime}\n`"
-            f"**➪ ᴍᴀsᴛᴇʀ        :** {mention}\n",
+            f"**↼ Øwñêr ⇀ : {mention}
+            f"__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
+             "╭──────────────"
+            f"**┣─ ➣ Telethon ➛** `1.24.0`\n"
+            f"**┣─ ➣ ɖǟʀӄաɛɮ  ➛** `1.0`\n"
+            f"**┣─ ➣ Sudo ➛    ** ``\n"
+            f"**┣─ ➣ Uptime ➛  :** `{uptime}`\n"
+            ,
         )
 
 
