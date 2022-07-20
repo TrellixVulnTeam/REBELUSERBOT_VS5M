@@ -110,17 +110,6 @@ async def amireallyalive(alive):
             alive.chat_id, DARK_IMG, caption=REBEL_caption, reply_to=reply_to_id
         )
         await alive.delete()
-    else:
-        await edit_or_reply(
-            alive,
-            f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-            f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
-            f"     __**ʙᴏᴛ sᴛᴀᴛᴜs**__\n\n"
-            f"**➪ ᴛᴇʟᴇᴛʜᴏɴ :** `1.24.0`\n"
-            f"**➪ ʀᴇʙᴇʟʙᴏᴛ :** `3.2`\n"
-            f"**➪ ᴜᴘᴛɪᴍᴇ      :** `{uptime}\n`"
-            f"**➪ ᴍᴀsᴛᴇʀ        :** {mention}\n",
-        )
 
 CmdHelp("alive").add_command("alive", None, "To check am i alive").add_command(
     "dark", None, "To check am i alive with your favorite alive pic"
