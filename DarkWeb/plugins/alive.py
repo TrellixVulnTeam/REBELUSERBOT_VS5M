@@ -90,7 +90,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 uptime = get_readable_time((time.time() - StartTime))
-    xnxx = (end - start).microseconds / 1000
+xnxx = (datetime.now() - datetime.now()).microseconds / 1000
     
 @dark.on(admin_cmd(outgoing=True, pattern="rebel$"))
 @dark.on(sudo_cmd(pattern="rebel$", allow_sudo=True))
