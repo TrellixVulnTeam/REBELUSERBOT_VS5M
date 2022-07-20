@@ -90,6 +90,17 @@ def get_readable_time(seconds: int) -> str:
 
 uptime = get_readable_time((time.time() - StartTime))
 
+
+REBEL_caption = """
+                  {CUSTOM_ALIVE_TEXT}**\n\n
+                   ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n
+                    __**ʙᴏᴛ sᴛᴀᴛᴜs**__\n\n
+                    ➪ ᴛᴇʟᴇᴛʜᴏɴ : `1.24.0`\n
+                    ➪ ʀᴇʙᴇʟʙᴏᴛ : `3.2`\n
+                    ➪ ᴜᴘᴛɪᴍᴇ   : `{uptime}\n`
+                    ➪ ᴍᴀsᴛᴇʀ    :** {mention}\n
+"""
+
 @dark.on(admin_cmd(outgoing=True, pattern="rebel$"))
 @dark.on(sudo_cmd(pattern="rebel$", allow_sudo=True))
 async def amireallyalive(alive):
@@ -97,18 +108,10 @@ async def amireallyalive(alive):
     if alive.fwd_from:
         return
     reply_to_id = await reply_id(alive)
-
-    if DARK_IMG:
-        REBEL_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        REBEL_caption += "≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
-        REBEL_caption += "__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n\n"
-        REBEL_caption += "**➪ ᴛᴇʟᴇᴛʜᴏɴ :** `1.24.0`\n"
-        REBEL_caption += f"**➪ ʀᴇʙᴇʟʙᴏᴛ :**`3.2`\n"
-        REBEL_caption += f"**➪ ᴜᴘᴛɪᴍᴇ   :** `{uptime}\n`"
-        REBEL_caption += f"**➪ ᴍᴀsᴛᴇʀ    :** {mention}\n"
+   
         await alive.client.send_file(
             alive.chat_id, DARK_IMG, caption=REBEL_caption, reply_to=reply_to_id
-        )
+            )
         await alive.delete()
 
 CmdHelp("alive").add_command("alive", None, "To check am i alive").add_command(
