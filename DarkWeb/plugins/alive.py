@@ -92,8 +92,8 @@ def get_readable_time(seconds: int) -> str:
 uptime = get_readable_time((time.time() - StartTime))
 xnxx = (datetime.now() - datetime.now()).microseconds / 1000
     
-@dark.on(admin_cmd(outgoing=True, pattern="rebel$"))
-@dark.on(sudo_cmd(pattern="rebel$", allow_sudo=True))
+@dark.on(admin_cmd(outgoing=True, pattern="dark$"))
+@dark.on(sudo_cmd(pattern="dark$", allow_sudo=True))
 async def amireallyalive(alive):
     smexxx = await edit_or_reply(alive, "`Building Alive....`")
     if alive.fwd_from:
@@ -102,10 +102,10 @@ async def amireallyalive(alive):
 
     if DARK_IMG:
         REBEL_caption = f"**↼ Øwñêr ⇀ : {mention}\n"
-        REBEL_caption += "__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
+        REBEL_caption += "  __ʙᴏᴛ sᴛᴀᴛᴜs__\n"
         REBEL_caption += "╭──────────────\n"
         REBEL_caption += f"┣─ ➣ Telethon ➛ `1.24.0`\n"
-        REBEL_caption += f"┣─ ➣ ɖǟʀӄաɛɮ  ➛ `1.0`\n"
+        REBEL_caption += f"┣─ ➣ ɖaʀӄաɛɮ  ➛ `1.0`\n"
         REBEL_caption += f"┣─ ➣ Sudo ➛    `{sudou}`\n"
         REBEL_caption += f"┣─ ➣ Uptime ➛ `{uptime}`\n"
         REBEL_caption += f"┣─ ➣ Ping ➛   `{xnxx}`\n"
@@ -118,10 +118,10 @@ async def amireallyalive(alive):
         await edit_or_reply(
             alive,
             f"**↼ Øwñêr ⇀ : {mention}\n"
-            f"__**ʙᴏᴛ sᴛᴀᴛᴜs**__\n"
+            f"  __ʙᴏᴛ sᴛᴀᴛᴜs__\n"
             "╭──────────────\n"
             f"┣─ ➣ Telethon ➛ `1.24.0`\n"
-            f"┣─ ➣ ɖǟʀӄաɛɮ  ➛ `1.0`\n"
+            f"┣─ ➣ ɖaʀӄաɛɮ  ➛ `1.0`\n"
             f"┣─ ➣ Sudo ➛     `{sudou}`\n"
             f"┣─ ➣ Uptime ➛ `{uptime}`\n"
             f"┣─ ➣ Ping ➛   `{xnxx}`\n"
