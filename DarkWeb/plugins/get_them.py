@@ -39,7 +39,7 @@ async def _(event):
             chat, filter=ChannelParticipantsAdmins
         ):
             if not x.deleted and isinstance(x.participant, ChannelParticipantCreator):
-                mentions += "\n 🔰 [{}](tg://user?id={}) `{}`".format(
+                mentions += "\n 🔰 Owner ➣ [{}](tg://user?id={}) `{}`".format(
                     x.first_name, x.id, x.id
                 )
         mentions += "\n"
@@ -50,7 +50,7 @@ async def _(event):
                 mentions += "\n `{}`".format(x.id)
             else:
                 if isinstance(x.participant, ChannelParticipantAdmin):
-                    mentions += "\n 🔸 [{}](tg://user?id={}) `{}`".format(
+                    mentions += "\n ➢ [{}](tg://user?id={}) `{}`".format(
                         x.first_name, x.id, x.id
                     )
     except Exception as e:
@@ -82,7 +82,7 @@ async def _(event):
     try:
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsBots):
             if isinstance(x.participant, ChannelParticipantAdmin):
-                mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(
+                mentions += "\n ➛ [{}](tg://user?id={}) `{}`".format(
                     x.first_name, x.id, x.id
                 )
             else:
