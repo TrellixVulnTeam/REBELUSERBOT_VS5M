@@ -14,8 +14,6 @@ from userbot.Config import Config
 REBEL_help_pic = Config.HELP_PIC
 REBEL_row = Config.BUTTONS_IN_HELP
 REBEL_emoji = Config.EMOJI_IN_HELP
-# thats how a lazy guy imports
-# REBELBOT
 
 def button(page, modules):
     Row = REBEL_row
@@ -50,8 +48,7 @@ def button(page, modules):
         ]
     )
     return [max_pages, buttons]
-    # Changing this line may give error in bot as i added some special cmds in REBELBOT channel to get this module work...
-
+    
     modules = CMD_HELP
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
@@ -64,7 +61,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
                 f"Hey! Only use .help please",
-                text=f"**Running REBELBOT**[⚡🔥]({REBEL_help_pic})\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"**Running REBELBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=True,
             )
@@ -79,7 +76,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         elif event.text=='':
             result = builder.article(
                 "@REBELBOT_SUPPORT",
-                text=f"""**Hey![🤗]({REBEL_help_pic}) This is [REBELBOT.](https://t.me/REBELBOT_SUPPORT)\nYou can know more about me from the links given below 👇**""",
+                text=f"""**Hey! This is [REBELBOT](https://t.me/REBELBOT_SUPPORT)\nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
                         custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"),
@@ -111,7 +108,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF REBELBOT[⚡🔥]({REBEL_help_pic})[.](https://t.me/REBELBOT_SUPPORT) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Legenday AF [REBELBOT](https://t.me/REBELBOT_SUPPORT) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=True,
         )
@@ -120,7 +117,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_REBEL(event,
-              f"⚜️REBELBOT Menu Provider Is now Closed[⚜️]({REBEL_help_pic})\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**[⚡🔥]({REBEL_help_pic})", 5, link_preview=True
+              f"⚜️REBELBOT Menu Provider Is now Closed\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**", 5, link_preview=True
             )
         else:
             REBEL_alert = "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™"
