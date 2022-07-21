@@ -64,7 +64,7 @@ async def drawText(image_path, text):
 
     else:
 
-        fnt = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+        fnt = "DarkWeb.resource.font.Deadly Advance.ttf"
 
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 
