@@ -21,7 +21,7 @@ logging.basicConfig(
 NO_PM_LOG_USERS = []
 
 BOTLOG_CHATID = Config.DARKWEB_ID
-
+DARKWEB_ID = Config.DARKWEB_ID
 
 @dark.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
