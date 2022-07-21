@@ -14,6 +14,7 @@ from DarkWeb.smex.DARK_Config import Config
 REBEL_help_pic = Config.HELP_PIC
 REBEL_row = Config.BUTTONS_IN_HELP
 REBEL_emoji = Config.EMOJI_IN_HELP
+HANDLER = Config.HNDLR
 
 def button(page, modules):
     Row = REBEL_row
