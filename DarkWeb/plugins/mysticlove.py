@@ -64,8 +64,8 @@ async def _(event):
             reply_to=event.message.id,
         )
 
-@dark.on(admin_cmd(pattern="mysticxlove(?: |$)(.*)"))
-@dark.on(sudo_cmd(pattern="mysticxlove(?: |$)(.*)", allow_sudo=True))
+@dark.on(admin_cmd(pattern="replylove(?: |$)(.*)"))
+@dark.on(sudo_cmd(pattern="replylove(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     global que
     if event.fwd_from:
@@ -96,8 +96,8 @@ async def _(event):
         await event.edit(f"EK TU H MERI M KYA DUNIA TO LENA. {username}")
 
 
-@dark.on(admin_cmd(pattern="nofeelings(?: |$)(.*)"))
-@dark.on(sudo_cmd(pattern="nofeelings(?: |$)(.*)", allow_sudo=True))
+@dark.on(admin_cmd(pattern="stoplove(?: |$)(.*)"))
+@dark.on(sudo_cmd(pattern="stoplove(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     global que
     if event.fwd_from:
