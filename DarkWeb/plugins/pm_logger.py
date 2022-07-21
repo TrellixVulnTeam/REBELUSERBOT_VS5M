@@ -26,9 +26,9 @@ DARKWEB_ID = Config.DARKWEB_ID
 @dark.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(event):
     sender = await event.get_sender()
-    if Config.DARKWEB_ID and not sender.bot:
+    if Config.NO_PM_LOG_USERS and not sender.bot:
         chat = await event.get_chat()
-        if chat.id not in DARKWEB_ID and chat.id != bot.uid:
+        if chat.id not in NO_PM_LOG_USERS and chat.id != bot.uid:
             try:
                 e = await bot.get_entity(int(Config.DARKWEB_ID))
                 fwd_message = await bot.forward_messages(e, event.message, silent=True)
@@ -46,8 +46,8 @@ async def set_no_log_p_m(event):
         event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-            if chat.id in DARKWEB_ID:
-                DARKWEB_ID.remove(chat.id)
+            if chat.id in NO_PM_LOG_USERS:
+                NO_PM_LOG_USERS.remove(chat.id)
                 await event.edit("Will Log Messages from this chat")
                 await asyncio.sleep(3)
                 await event.delete()
@@ -59,8 +59,8 @@ async def set_no_log_p_m(event):
         event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-            if chat.id not in DARKWEB_ID:
-                DARKWEB_ID.append(chat.id)
+            if chat.id not in NO_PM_LOG_USERS:
+                NO_PM_LOG_USERS.append(chat.id)
                 await event.edit("Won't Log Messages from this chat")
                 await asyncio.sleep(3)
                 await event.delete()
