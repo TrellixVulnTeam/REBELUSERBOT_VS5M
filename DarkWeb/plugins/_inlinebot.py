@@ -6,10 +6,10 @@ from telethon.events import InlineQuery, callbackquery
 from telethon.sync import custom
 from telethon.tl.functions.channels import JoinChannelRequest
 
-from userbot import *
-from userbot.cmdhelp import *
-from REBELBOT.utils import *
-from userbot.Config import Config
+from DarkWeb import *
+from DarkWeb.cmdhelp import *
+from Dark.utils import *
+from DarkWeb.smex.DARK_Config import Config
 
 REBEL_help_pic = Config.HELP_PIC
 REBEL_row = Config.BUTTONS_IN_HELP
