@@ -206,8 +206,8 @@ async def home(event):
                 custom.Button.inline("ʙʀᴏᴀᴅᴄᴀsᴛ", data="Darkbrod"),
             ],
             [
-                Button.url("ʀᴇʙᴇʟ ᴜᴘᴅᴀᴛᴇ", "t.me/DARK_WEB_UB"),
-                Button.url("ʀᴇʙᴇʟ sᴜᴘᴘᴏʀᴛ", "t.me/Dark_BOT_CHATING"),
+                Button.url("ʀᴇʙᴇʟ ᴜᴘᴅᴀᴛᴇ", "t.me/THE_DARK_WEB_BOT"),
+                Button.url("ʀᴇʙᴇʟ sᴜᴘᴘᴏʀᴛ", "t.me/DARK_WEB_UB"),
             ],
         ],
     )
@@ -229,9 +229,9 @@ async def deploy(event):
                         "ʀᴇᴘᴏsɪᴛᴏʀʏ", url="https://github.com/Dark75/DarkSBOTS"
                     )
                 ),
-                (custom.Button.url("ᴜᴘᴅᴀᴛᴇ", url="https://t.me/DARK_WEB_UB")),
+                (custom.Button.url("ᴜᴘᴅᴀᴛᴇ", url="https://t.meTHE_DARK_WEB_BOT")),
             ],
-            [custom.Button.url("sᴜᴘᴘᴏʀᴛ", url="https://t.me/Dark_BOT_CHATING")],
+            [custom.Button.url("sᴜᴘᴘᴏʀᴛ", url="https://t.me/DARK_WEB_UB")],
         ],
     )
 
