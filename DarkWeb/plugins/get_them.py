@@ -9,8 +9,8 @@ from telethon.utils import pack_bot_file_id
 from Dark.utils import admin_cmd, sudo_cmd, edit_or_reply
 from DarkWeb.cmdhelp import CmdHelp
 
-@dark.on(admin_cmd(pattern="get_admins ?(.*)"))
-@dark.on(sudo_cmd(pattern="get_admins ?(.*)", allow_sudo=True))
+@dark.on(admin_cmd(pattern="admins ?(.*)"))
+@dark.on(sudo_cmd(pattern="admins ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -61,8 +61,8 @@ async def _(event):
         await event.client.send_message(event.chat_id, mentions)
     await event.delete()
     
-@dark.on(admin_cmd(pattern="get_bot ?(.*)"))
-@dark.on(sudo_cmd(pattern="get_bot ?(.*)", allow_sudo=True))
+@dark.on(admin_cmd(pattern="bots ?(.*)"))
+@dark.on(sudo_cmd(pattern="bots ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -94,8 +94,8 @@ async def _(event):
     await event.edit(mentions)
     
     
-@dark.on(admin_cmd(pattern="get_id"))
-@dark.on(sudo_cmd(pattern="get_id", allow_sudo=True))
+@dark.on(admin_cmd(pattern="id"))
+@dark.on(sudo_cmd(pattern="id", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -120,11 +120,11 @@ async def _(event):
 
 
 CmdHelp("get_them").add_command(
-  'get_admins', None, 'Gets the list of admins in current chat along with the crator'
+  'admins', None, 'Gets the list of admins in current chat along with the crator'
 ).add_command(
-  'get_id', '<reply>', 'Gets the user id of the replied user.'
+  'id', '<reply>', 'Gets the user id of the replied user.'
 ).add_command(
-  'get_bot', None, 'Gets the list of all the bots in the chat.'
+  'bots', None, 'Gets the list of all the bots in the chat.'
 ).add_command(
   'info', '<reply / username>', 'Fetches the information of the user'
 ).add()
