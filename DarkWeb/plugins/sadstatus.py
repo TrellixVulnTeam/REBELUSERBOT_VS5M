@@ -14,7 +14,7 @@ from Dark.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("@veryhelpful Making A Shayri for u.......")
+    await event.edit("Making A Shayri for u.......")
     await asyncio.sleep(2)
     s=(random.randrange(1,15)) 
     if s==1:
