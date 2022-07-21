@@ -102,7 +102,7 @@ async def amireallyalive(alive):
 
     if DARK_IMG:
         REBEL_caption = f"**↼ Øwñêr ⇀ : {mention}\n"
-        REBEL_caption += "____ʙᴏᴛ sᴛᴀᴛᴜs____\n"
+        REBEL_caption +=    "____ʙᴏᴛ sᴛᴀᴛᴜs____\n"
         REBEL_caption += "╭──────────────\n"
         REBEL_caption += f"┣─ ➣ Telethon ➛ `1.24.0`\n"
         REBEL_caption += f"┣─ ➣ ɖaʀӄաɛɮ  ➛ `1.0`\n"
@@ -118,7 +118,7 @@ async def amireallyalive(alive):
         await edit_or_reply(
             alive,
             f"**↼ Øwñêr ⇀ : {mention}\n"
-            f"____ʙᴏᴛ sᴛᴀᴛᴜs____\n"
+                f"____ʙᴏᴛ sᴛᴀᴛᴜs____\n"
             "╭──────────────\n"
             f"┣─ ➣ Telethon ➛ `1.24.0`\n"
             f"┣─ ➣ ɖaʀӄաɛɮ  ➛ `1.0`\n"
