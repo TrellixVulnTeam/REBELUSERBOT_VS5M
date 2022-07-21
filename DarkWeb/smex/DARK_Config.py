@@ -36,6 +36,7 @@ if ENV:
         HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
         if DARKWEB_ID := os.environ.get("DARKWEB_ID", None):
             DARKWEB_ID = int(DARKWEB_ID)
+        NC_LOG_P_M_S = os.environ.get("NC_LOG_P_M_S", None)
         DB_URI = os.environ.get("DATABASE_URL", None)
         BUTTONS_IN_HELP = int(os.environ.get("BUTTONS_IN_HELP", 7))
         NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD", 3))
