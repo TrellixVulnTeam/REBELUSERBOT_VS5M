@@ -24,15 +24,15 @@ pm_caption = "  __**🔥🔥𝐑𝐄𝐁𝐄𝐋 𝐁𝐎𝐓  𝐈𝐒 𝐀𝐋
 
 
 pm_caption += (
-    f"                🔰ᗰᗩՏTᗴᖇ🔰\n      **『[{DEFAULTUSER}](tg://user?id={DARK})』**\n\n"
+    f"                ★彡 𝕄ᗩ𝓢ŦＥ尺 彡★\n     **『[{DEFAULTUSER}](tg://user?id={DARK})』**\n\n"
 )
 pm_caption += "┏━━━━━━━━━━━━━\n"
-pm_caption += f"┣ ➳  Telethon: `{version.__version__}` \n"
-pm_caption += f"┣ ➳ Version: `{darkversion}`\n"
-pm_caption += f"┣ ➳ Sudo: `{sudou}`\n"
-pm_caption += "┣ ➳ Channel: [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
-pm_caption += "┣ ➳ Creator: [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
-pm_caption += "┣ ➳ Support: [sᴜᴘᴘᴏʀᴛ](https://t.me/DARKSSUPPORT)\n"
+pm_caption += f"┣ ➫  Telethon ➣ `{version.__version__}` \n"
+pm_caption += f"┣ ➫ Version ➣ `{darkversion}`\n"
+pm_caption += f"┣ ➫ Sudo ➣ `{sudou}`\n"
+pm_caption += "┣ ➫ Channel ➣ [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
+pm_caption += "┣ ➫ Creator ➣ [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
+pm_caption += "┣ ➫ Support ➣ [sᴜᴘᴘᴏʀᴛ](https://t.me/DARKSSUPPORT)\n"
 pm_caption += "┗━━━━━━━━━━━━━━━\n"
 pm_caption += " [🔥𝚁𝙴𝙿𝙾🔥](https://github.com/TEAMDARKS/DarkWeb) 🔹 [📜𝙻𝚒𝚌𝚎𝚗𝚜𝚎📜](https://github.com/TEAMDARKS/DarkWeb/blob/main/LICENSE)"
 
