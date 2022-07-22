@@ -27,12 +27,12 @@ pm_caption += (
     f"                🔰ᗰᗩՏTᗴᖇ🔰\n      **『[{DEFAULTUSER}](tg://user?id={DARK})』**\n\n"
 )
 pm_caption += "┏━━━━━━━━━━━━━\n"
-pm_caption += f"┣•➳➠  ᴛᴇʟᴇᴛʜᴏɴ: `{version.__version__}` \n"
-pm_caption += f"┣•➳➠ ᴠᴇʀsɪᴏɴ: `{darkversion}`\n"
-pm_caption += f"┣•➳➠ sᴜᴅᴏ: `{sudou}`\n"
-pm_caption += "┣•➳➠ ᴄʜᴀɴɴᴇʟ: [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
-pm_caption += "┣•➳➠ ᴄʀᴇᴀᴛᴏʀ: [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
-pm_caption += "┣•➳➠ sᴜᴘᴘᴏʀᴛᴇʀ: [sᴜᴘᴘᴏʀᴛ](https://t.me/DARKSSUPPORT)\n"
+pm_caption += f"┣ ➳  Telethon: `{version.__version__}` \n"
+pm_caption += f"┣ ➳ Version: `{darkversion}`\n"
+pm_caption += f"┣ ➳ Sudo: `{sudou}`\n"
+pm_caption += "┣ ➳ Channel: [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
+pm_caption += "┣ ➳ Creator: [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
+pm_caption += "┣ ➳ Support: [sᴜᴘᴘᴏʀᴛ](https://t.me/DARKSSUPPORT)\n"
 pm_caption += "┗━━━━━━━━━━━━━━━\n"
 pm_caption += " [🔥𝚁𝙴𝙿𝙾🔥](https://github.com/TEAMDARKS/DarkWeb) 🔹 [📜𝙻𝚒𝚌𝚎𝚗𝚜𝚎📜](https://github.com/TEAMDARKS/DarkWeb/blob/main/LICENSE)"
 
@@ -106,9 +106,9 @@ async def amireallyalive(alive):
         REBEL_caption += "╭──────────────\n"
         REBEL_caption += f"┣─ ➣ Telethon ➛ `1.24.0`\n"
         REBEL_caption += f"┣─ ➣ ɖaʀӄաɛɮ  ➛ `1.0`\n"
-        REBEL_caption += f"┣─ ➣ Sudo ➛    `{sudou}`\n"
         REBEL_caption += f"┣─ ➣ Uptime ➛ `{uptime}`\n"
         REBEL_caption += f"┣─ ➣ Ping ➛   `{xnxx}`\n"
+        REBEL_caption += f"┣─ ➣ Sudo ➛   `{sudou}`\n"
         REBEL_caption += "╰──────────────"
         await alive.client.send_file(
             alive.chat_id, DARK_IMG, caption=REBEL_caption, reply_to=reply_to_id
@@ -122,9 +122,9 @@ async def amireallyalive(alive):
             "╭──────────────\n"
             f"┣─ ➣ Telethon ➛ `1.24.0`\n"
             f"┣─ ➣ ɖaʀӄաɛɮ  ➛ `1.0`\n"
-            f"┣─ ➣ Sudo ➛     `{sudou}`\n"
             f"┣─ ➣ Uptime ➛ `{uptime}`\n"
             f"┣─ ➣ Ping ➛   `{xnxx}`\n"
+            f"┣─ ➣ Sudo ➛   `{sudou}`\n"
             "╰──────────────"
             ,
         )
