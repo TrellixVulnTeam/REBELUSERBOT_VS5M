@@ -27,12 +27,12 @@ pm_caption += (
     f"                🔰ᗰᗩՏTᗴᖇ🔰\n      **『[{DEFAULTUSER}](tg://user?id={DARK})』**\n\n"
 )
 pm_caption += "┏━━━━━━━━━━━━━\n"
-pm_caption += f"┣•➳➠  `ᴛᴇʟᴇᴛʜᴏɴ:` `{version.__version__}` \n"
-pm_caption += f"┣•➳➠ `ᴠᴇʀsɪᴏɴ:` `{darkversion}`\n"
-pm_caption += f"┣•➳➠ `sᴜᴅᴏ:` `{sudou}`\n"
-pm_caption += "┣•➳➠ `ᴄʜᴀɴɴᴇʟ:` [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
-pm_caption += "┣•➳➠ `ᴄʀᴇᴀᴛᴏʀ:` [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
-pm_caption += "┣•➳➠ `sᴜᴘᴘᴏʀᴛᴇʀ:` [sᴜᴘᴘᴏʀᴛ](https://t.me/DARKSSUPPORT)\n"
+pm_caption += f"┣•➳➠  ᴛᴇʟᴇᴛʜᴏɴ: `{version.__version__}` \n"
+pm_caption += f"┣•➳➠ ᴠᴇʀsɪᴏɴ: `{darkversion}`\n"
+pm_caption += f"┣•➳➠ sᴜᴅᴏ: `{sudou}`\n"
+pm_caption += "┣•➳➠ ᴄʜᴀɴɴᴇʟ: [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
+pm_caption += "┣•➳➠ ᴄʀᴇᴀᴛᴏʀ: [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
+pm_caption += "┣•➳➠ sᴜᴘᴘᴏʀᴛᴇʀ: [sᴜᴘᴘᴏʀᴛ](https://t.me/DARKSSUPPORT)\n"
 pm_caption += "┗━━━━━━━━━━━━━━━\n"
 pm_caption += " [🔥𝚁𝙴𝙿𝙾🔥](https://github.com/TEAMDARKS/DarkWeb) 🔹 [📜𝙻𝚒𝚌𝚎𝚗𝚜𝚎📜](https://github.com/TEAMDARKS/DarkWeb/blob/main/LICENSE)"
 
