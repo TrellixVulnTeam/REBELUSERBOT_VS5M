@@ -24,7 +24,7 @@ pm_caption = "  __**🔥🔥𝐑𝐄𝐁𝐄𝐋 𝐁𝐎𝐓  𝐈𝐒 𝐀𝐋
 
 
 pm_caption += (
-    f"                ★彡 𝕄ᗩ𝓢ŦＥ尺 彡★\n     **『[{DEFAULTUSER}](tg://user?id={DARK})』**\n\n"
+    f"                ★彡 𝕄ᗩ𝓢ŦＥ尺 彡★\n                  **『[{DEFAULTUSER}](tg://user?id={DARK})』**\n\n"
 )
 pm_caption += "┏━━━━━━━━━━━━━\n"
 pm_caption += f"┣ ➫  Telethon ➣ `{version.__version__}` \n"
