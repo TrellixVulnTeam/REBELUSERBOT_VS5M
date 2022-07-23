@@ -7,7 +7,7 @@ from ..cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Dark User"
 R3b3l0p = borg.uid
-Dark_IMG = Config.ALIVE_PIC
+Dark_IMG = Config.PING_PIC
 
 #PIC ADDED BY MAFIA OWNER
 
