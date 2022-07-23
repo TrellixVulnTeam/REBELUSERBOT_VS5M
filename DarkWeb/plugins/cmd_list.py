@@ -6,7 +6,7 @@ from DarkWeb import bot as DarkWeb
 from DarkWeb import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Dark User"
-Dark_logo = "./Dark725/DarkWeb_logo.jpg"
+Dark_logo = "DarkWeb/resource/pic/lodu_pic.jpg"
 
 @DarkWeb.on(admin_cmd(pattern=r"cmds"))
 @DarkWeb.on(sudo_cmd(pattern=r"cmds", allow_sudo=True))
