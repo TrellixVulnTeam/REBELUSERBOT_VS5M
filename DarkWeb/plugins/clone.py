@@ -17,7 +17,7 @@ from DarkWeb.cmdhelp import CmdHelp
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Dark User"
 
-DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "ʟɛɢɛռɖaʀʏ ᴀғ ɦɛʟʟɮօt"
+DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "ʟɛɢɛռɖaʀʏ ᴀғ ɖaʀӄաɛɮ ɮօȶ"
 BOTLOG_CHATID = Config.DARKWEB_ID
 BOTLOG = True
 
