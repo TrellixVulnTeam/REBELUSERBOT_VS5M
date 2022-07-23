@@ -23,7 +23,7 @@ from DarkWeb.helpers.tools import media_type
 
 from var import Var
 
-from DarkWeb import CMD_LIST, LOAD_PLUG,  start_assistant, SUDO_LIST, bot
+from DarkWeb import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
 from DarkWeb.helpers.exceptions import CancelProcess
 
 ENV = bool(os.environ.get("ENV", False))
