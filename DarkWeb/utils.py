@@ -23,7 +23,7 @@ from DarkWeb.helpers.tools import media_type
 
 from var import Var
 
-from DarkWeb import CMD_LIST, LOAD_PLUG, SUDO_LIST, bot
+from DarkWeb import CMD_LIST, LOAD_PLUG,  start_assistant, SUDO_LIST, bot
 from DarkWeb.helpers.exceptions import CancelProcess
 
 ENV = bool(os.environ.get("ENV", False))
@@ -644,3 +644,45 @@ async def unsavegif(event, R3b3l0p):
         )
     except Exception as e:
         LOGS.info(str(e))
+
+
+
+## Assistant.......
+
+def start_assistant(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import DarkWeb.utils
+
+        path = Path(f"DarkWeb/assistant/{shortname}.py")
+        name = "DarkWeb.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        LOGS.info("Successfully imported " + shortname)
+    else:
+        import DarkWeb.utils
+
+        path = Path(f"DarkWeb/assistant/{shortname}.py")
+        name = "DarkWeb.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.bot = bot
+        mod.tgbot = bot.tgbot
+        mod.Var = Var
+        mod.command = command
+        mod.logger = logging.getLogger(shortname)
+        mod.Config = Config
+        mod.edit_or_reply = edit_or_reply
+        mod.delete_Dark = delete_Dark
+        mod.media_type = media_type
+        sys.modules["Dark.utils"] = DarkWeb.utils
+        sys.modules["Dark.util"] = DarkWeb.utils
+        sys.modules["DarkWeb"] = DarkWeb
+        sys.modules["DarkWeb.events"] = DarkWeb.utils
+        spec.loader.exec_module(mod)
+        # for imports
+        sys.modules["DarkWeb.plugins." + shortname] = mod
+        LOGS.info("🔰𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳🔰 " + shortname)
+
