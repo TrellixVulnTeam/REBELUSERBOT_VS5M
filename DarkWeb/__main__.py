@@ -8,12 +8,11 @@ from var import Var
 from DarkWeb.smex.DARK_Config import Config
 from DarkWeb import *
 from DarkWeb.utils import load_module
-from DarkWeb import LOAD_PLUG, start_assistant, darkversion
+from DarkWeb import LOAD_PLUG, darkversion
 from pathlib import Path
 import asyncio
 import telethon.utils
 
-LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
 os.system("pip install -U telethon")
 
 async def add_bot(bot_token):
@@ -51,20 +50,6 @@ for name in files:
         path1 = Path(f.name)
         shortname = path1.stem
         load_module(shortname.replace(".py", ""))
-
-if LOAD_ASSISTANT == True:
-    path = "DarkWeb/assistant/*.py"
-    files = glob.glob(path)
-    for name in files:
-        with open(name) as f:
-            path1 = Path(f.name)
-            shortname = path1.stem
-            try:
-                start_assistant(shortname.replace(".py", ""))
-            except Exception as er:
-                print(er)
-else:
-    print("Assitant is Not Loading As U Have Disabled")
 
 import DarkWeb._core
 
