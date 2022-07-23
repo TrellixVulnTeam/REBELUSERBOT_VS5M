@@ -31,6 +31,7 @@ CMD_HELP_BOT = {}
 BRAIN_CHECKER = []
 INT_PLUG = ""
 LOAD_PLUG = {}
+LOAD_ASSISTANT = {}
 
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
