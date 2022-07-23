@@ -4,8 +4,8 @@ from Dark.utils import admin_cmd, sudo_cmd, edit_or_reply
 from DarkWeb.cmdhelp import CmdHelp
 
 
-@dark.on(admin_cmd(pattern="get_poll$", outgoing=True))
-@dark.on(sudo_cmd(pattern="get_poll$", allow_sudo=True))
+@dark.on(admin_cmd(pattern="poll$", outgoing=True))
+@dark.on(sudo_cmd(pattern="poll$", allow_sudo=True))
 async def _(event):
     reply_message = await event.get_reply_message()
     if reply_message.media is None:
@@ -40,5 +40,5 @@ Answers: \n""".format(
         await edit_or_reply(event, edit_caption)
 
 CmdHelp("polls").add_command(
-  "get_poll", "<reply>", "Gets the details about the replied poll."
+  "poll", "<reply>", "Gets the details about the replied poll."
 ).add()
