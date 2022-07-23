@@ -5,7 +5,7 @@ from Dark.utils import admin_cmd, edit_or_reply, sudo_cmd
 from DarkWeb import bot as DarkWeb
 from DarkWeb import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Dark User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "DARK WEB"
 Dark_logo = "DarkWeb/resource/pic/lodu_pic.jpg"
 
 @DarkWeb.on(admin_cmd(pattern=r"cmds"))
@@ -25,7 +25,7 @@ async def install(event):
     o = stdout.decode()
     _o = o.split("\n")
     o = "\n".join(_o)
-    OUTPUT = f"List of Plugins in DarkWeb :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/DarkWeb_Chit_Chat for help."
+    OUTPUT = f"List of Plugins in DarkWeb :- \n\n{o}\n\n<><><><><><><><><><><><><><><><><><><><><><><><>\nHELP:- If you want to know the commands for a plugin, do :- \n.plinfo <plugin name> without the < > brackets. \nJoin https://t.me/DARK_WEB_UB for help."
     if len(OUTPUT) > 69:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "cmd_list.text"
