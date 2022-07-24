@@ -3,7 +3,7 @@ from telethon import events
 from DarkWeb import ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝐃𝐀𝐑𝐊 𝐖𝐄𝐁"
-PM_IMG = "https://telegra.ph/file/d5a71ebce68e1568b5a74.jpg"
+PM_IMG = "https://telegra.ph/file/8d3ef1032a204144ae074.mp4"
 pm_caption = "➥ **Assistant :** `ONLINE`\n\n" + "➥ **ՏYՏTᗴᗰՏ ՏTᗩTՏ**\n"
 pm_caption += "➥ **Telethon:** `1.15.0` \n"
 pm_caption += "➥ **Python:** `3.8.6` \n"
