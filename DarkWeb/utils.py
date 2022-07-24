@@ -44,7 +44,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("Successfully imported " + shortname)
+        LOGS.info("ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ" + shortname)
     else:
         import DarkWeb.utils
 
@@ -71,7 +71,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["DarkWeb.plugins." + shortname] = mod
-        LOGS.info("🔰𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙸𝙼𝙿𝙾𝚁𝚃𝙴𝙳🔰 " + shortname)
+        LOGS.info("ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ" + shortname)
 
 
 def remove_plugin(shortname):
@@ -646,3 +646,33 @@ async def unsavegif(event, R3b3l0p):
 
 
 ## Assistant.......
+
+# Assistant
+def start_assistant(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"DarkWeb/assistant/{shortname}.py")
+        name = f"DarkWeb.assistant.{shortname}"
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print("Starting Your Assistant Bot.")
+        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ {shortname}")
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"DarkWeb/assistant{shortname}.py")
+        name = f"DarkWeb.assistant.{shortname}"
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules[f"DarkWeb.assistant{shortname}"] = mod
+        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ {shortname}")
