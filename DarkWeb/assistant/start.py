@@ -12,14 +12,14 @@ from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
 from DarkWeb import bot
-from DarkWeb.Config import Config
-from DarkWeb.plugins.sql_helper.blacklist_assistant import (
+DarkWeb.smex.DARK_Config import Config
+from DarkWeb.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
     removenibba,
 )
-from DarkWeb.plugins.sql_helper.botusers_sql import add_me_in_db, his_userid
-from DarkWeb.plugins.sql_helper.idadder_sql import (
+from DarkWeb.sql_helper.botusers_sql import add_me_in_db, his_userid
+from DarkWeb.sql_helper.idadder_sql import (
     add_usersid_in_db,
     already_added,
     get_all_users,
@@ -46,7 +46,7 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     vent = event.chat_id
-    starttext = f"𝙷𝙴𝙻𝙻𝙾, {firstname} ! 𝙽𝙸𝙲𝙴 𝚃𝙾 𝙼𝙴𝙴𝚃 𝚈𝙾𝚄, 𝚆𝙴𝙻𝙻 𝙸 𝙰𝙼 {bot_id}, 𝙰𝙽 𝙿𝙾𝚆𝙴𝚁𝙵𝚄𝙻𝙻 𝙰𝚂𝚂𝙸𝚂𝚃𝙰𝙽𝚃 𝙱𝙾𝚃.\n\nMy [➤ ᗰᗩՏTᗴᖇ](tg://user?id={bot.uid}) \n\n 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚃𝙰𝙻𝙺 | 𝙲𝙾𝙽𝚃𝙰𝙲𝚃 𝙼𝚈 𝙼𝙰𝚂𝚃𝙴𝚁 𝚄𝚂𝙸𝙽𝙶 𝚃𝙷𝙸𝚂 𝙱𝙾𝚃. \n\n 𝙸𝙵 𝚈𝙾𝚄 𝚆𝙰𝙽𝚃 𝚈𝙾𝚄𝚁 𝙾𝚆𝙽 𝙰𝚂𝚂𝙸𝚂𝚃𝙰𝙽𝚃 𝙲𝙰𝙽 𝙳𝙴𝙿𝙻𝙾𝚈 𝙵𝚁𝙾𝙼 𝙱𝚄𝚃𝚃𝙾𝙽 𝙱𝙴𝙻𝙾𝙴.\n\n𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 [『𝐑𝐄𝐁𝐄𝐋𝐁𝐎𝐓』](https://t.me/DARK_WEB_UB)"
+    starttext = f"𝙷𝙴𝙻𝙻𝙾, {firstname} ! 𝙽𝙸𝙲𝙴 𝚃𝙾 𝙼𝙴𝙴𝚃 𝚈𝙾𝚄, 𝚆𝙴𝙻𝙻 𝙸 𝙰𝙼 {bot_id}, 𝙰𝙽 𝙿𝙾𝚆𝙴𝚁𝙵𝚄𝙻𝙻 𝙰𝚂𝚂𝙸𝚂𝚃𝙰𝙽𝚃 𝙱𝙾𝚃.\n\nMy [➤ ᗰᗩՏTᗴᖇ](tg://user?id={bot.uid}) \n\n 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚃𝙰𝙻𝙺 | 𝙲𝙾𝙽𝚃𝙰𝙲𝚃 𝙼𝚈 𝙼𝙰𝚂𝚃𝙴𝚁 𝚄𝚂𝙸𝙽𝙶 𝚃𝙷𝙸𝚂 𝙱𝙾𝚃. \n\n 𝙸𝙵 𝚈𝙾𝚄 𝚆𝙰𝙽𝚃 𝚈𝙾𝚄𝚁 𝙾𝚆𝙽 𝙰𝚂𝚂𝙸𝚂𝚃𝙰𝙽𝚃 𝙲𝙰𝙽 𝙳𝙴𝙿𝙻𝙾𝚈 𝙵𝚁𝙾𝙼 𝙱𝚄𝚃𝚃𝙾𝙽 𝙱𝙴𝙻𝙾𝙴.\n\n𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 [『𝐃𝐀𝐑𝐊𝐖𝐄𝐁』](https://t.me/DARK_WEB_UB)"
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
@@ -77,8 +77,8 @@ async def start(event):
             message=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("ᴅᴇᴘʟᴏʏ ʏᴏᴜʀ ᴏᴡɴ ʀᴇʙᴇʟʙᴏᴛ", data="deploy")],
-                [Button.url("Sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ", "https://t.me/Dark_BOT_CHATING")],
+                [custom.Button.inline("ᴅᴇᴘʟᴏʏ ʏᴏᴜʀ ᴏᴡɴ ᴅᴀʀᴋᴡᴇʙ", data="deploy")],
+                [Button.url("Sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ", "https://t.me/DARK_WEB_BOT_SUPPORT")],
             ],
         )
 
@@ -206,8 +206,8 @@ async def home(event):
                 custom.Button.inline("ʙʀᴏᴀᴅᴄᴀsᴛ", data="Darkbrod"),
             ],
             [
-                Button.url("ʀᴇʙᴇʟ ᴜᴘᴅᴀᴛᴇ", "t.me/THE_DARK_WEB_BOT"),
-                Button.url("ʀᴇʙᴇʟ sᴜᴘᴘᴏʀᴛ", "t.me/DARK_WEB_UB"),
+                Button.url("ᴅᴀʀᴋᴡᴇʙ ᴜᴘᴅᴀᴛᴇ", "t.me/DARK_WEB_UB"),
+                Button.url("ᴅᴀʀᴋᴡᴇʙ sᴜᴘᴘᴏʀᴛ", "t.me/DARK_WEB_BOT_SUPPORT"),
             ],
         ],
     )
@@ -229,9 +229,9 @@ async def deploy(event):
                         "ʀᴇᴘᴏsɪᴛᴏʀʏ", url="https://github.com/Dark75/DarkSBOTS"
                     )
                 ),
-                (custom.Button.url("ᴜᴘᴅᴀᴛᴇ", url="https://t.meTHE_DARK_WEB_BOT")),
+                (custom.Button.url("ᴜᴘᴅᴀᴛᴇ", url="t.me/DARK_WEB_UB")),
             ],
-            [custom.Button.url("sᴜᴘᴘᴏʀᴛ", url="https://t.me/DARK_WEB_UB")],
+            [custom.Button.url("sᴜᴘᴘᴏʀᴛ", url="t.me/DARK_WEB_BOT_SUPPORT")],
         ],
     )
 
@@ -258,8 +258,8 @@ async def users(event):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"gibcmd")))
 async def gibcmd(event):
     await event.delete()
-    grabon = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot \n➤ /purge - Reply It From The Message u Want to Delete (Your Bot Should be Admin to Execute It) \n➤ /del - Reply a Message Tht Should Be Deleted (Your Bot Should be Admin to Execute It)"
-    await tgbot.send_message(event.chat_id, grabon)
+    chumty = "Hello Here Are Some Commands \n➤ /start - Check if I am Alive \n➤ /ping - Pong! \n➤ /tr <lang-code> \n➤ /broadcast - Sends Message To all Users In Bot \n➤ /id - Shows ID of User And Media. \n➤ /addnote - Add Note \n➤ /notes - Shows Notes \n➤ /rmnote - Remove Note \n➤ /alive - Am I Alive? \n➤ /bun - Works In Group , Bans A User. \n➤ /unbun - Unbans A User in Group \n➤ /prumote - Promotes A User \n➤ /demute - Demotes A User \n➤ /pin - Pins A Message \n➤ /stats - Shows Total Users In Bot \n➤ /purge - Reply It From The Message u Want to Delete (Your Bot Should be Admin to Execute It) \n➤ /del - Reply a Message Tht Should Be Deleted (Your Bot Should be Admin to Execute It)"
+    await tgbot.send_message(event.chat_id, chumty)
 
 
 # Bot Permit.
@@ -520,7 +520,7 @@ async def alv_txt(event):
 async def pm_txt(event):
     if event.sender_id == bot.uid:
         await event.delete()
-        Dark3 = "CUSTOM_PMPERMIT"
+        Dark3 = "PM_MASSAGE"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -577,7 +577,7 @@ async def pm_pic(event):
                 os.remove(media)
             except BaseException:
                 return await conv.send_message("Error!")
-        Dark4 = "PMPERMIT_PIC"
+        Dark4 = "PM_PIC"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
@@ -636,7 +636,7 @@ async def inl_emj(event):
 async def sud_users(event):
     if event.sender_id == bot.uid:
         await event.delete()
-        Dark7 = "SUDO_COMMAND_HAND_LER"
+        Dark7 = "SUDO_HNDLR"
         if Var.HEROKU_APP_NAME is not None:
             app = Heroku.app(Var.HEROKU_APP_NAME)
         else:
