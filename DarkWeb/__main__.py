@@ -13,6 +13,9 @@ from pathlib import Path
 import asyncio
 import telethon.utils
 
+
+LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
+
 os.system("pip install -U telethon")
 
 async def add_bot(bot_token):
