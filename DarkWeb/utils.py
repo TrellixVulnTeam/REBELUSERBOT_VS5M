@@ -662,17 +662,17 @@ def start_assistant(shortname):
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Starting Your Assistant Bot.")
-        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ  {shortname}")
+        print(f"Assistant Sucessfully imported {shortname}")
     else:
         import importlib
         import sys
         from pathlib import Path
 
-        path = Path(f"DarkWeb/assistant{shortname}.py")
+        path = Path(f"DarkWeb/assistant/{shortname}.py")
         name = f"DarkWeb.assistant.{shortname}"
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules[f"DarkWeb.assistant{shortname}"] = mod
-        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ  {shortname}")
+        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ {shortname}")
