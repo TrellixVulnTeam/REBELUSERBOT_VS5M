@@ -44,7 +44,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ" + shortname)
+        LOGS.info("ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ  " + shortname)
     else:
         import DarkWeb.utils
 
@@ -71,7 +71,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["DarkWeb.plugins." + shortname] = mod
-        LOGS.info("ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ" + shortname)
+        LOGS.info("ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ   " + shortname)
 
 
 def remove_plugin(shortname):
@@ -662,7 +662,7 @@ def start_assistant(shortname):
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Starting Your Assistant Bot.")
-        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ {shortname}")
+        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ  {shortname}")
     else:
         import importlib
         import sys
@@ -675,4 +675,4 @@ def start_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules[f"DarkWeb.assistant{shortname}"] = mod
-        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ {shortname}")
+        print(f"ֆʊƈƈɛֆֆʄʊʟʟʏ ɨʍքօʀȶɛɖ ǟֆֆɨֆȶǟռȶ  {shortname}")
