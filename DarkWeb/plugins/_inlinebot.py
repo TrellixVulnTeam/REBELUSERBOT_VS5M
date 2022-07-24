@@ -17,10 +17,8 @@ REBEL_emoji = Config.EMOJI_IN_HELP
 HANDLER = Config.HNDLR
 
 
-DEFAULTUSER = ALIVE_NAME or "ᖇᗴᗷᗴᒪ ᗰᗩՏTᗴᖇ"
-
+DEFAULTUSER = ALIVE_NAME or "DARK WEB"
 USERID = bot.uid
-
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 if REBEL_help_pic := Config.HELP_PIC:
@@ -71,12 +69,12 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@REBELBOT_SUPPORT":
+        if event.query.user_id == bot.uid and query == "@DARKWEB_HELP":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.photo(
                 file=_file_to_replace,
-                text=f"Running REBELBOT\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -91,12 +89,12 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         elif event.text=='':
             result = builder.article(
                 "@REBELBOT_SUPPORT",
-                text=f"""**Hey! This is REBELBOTnYou can know more about me from the links given below 👇**""",
+                text=f"""**Hey! This is  DARK WEB \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DARK_WEB_UB"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/REBEL_BOT_CHATING"
+                            "⚡ GROUP ⚡", "https://t.me/DARK_WEB_BOT_SUPPORT"
                         ),
                     ],
                     [
@@ -123,7 +121,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF REBELBOT __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}**",
             buttons=veriler[1],
             link_preview=True,
         )
