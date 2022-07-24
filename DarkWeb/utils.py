@@ -63,7 +63,7 @@ def load_module(shortname):
         mod.dark = bot
         mod.edit_or_reply = edit_or_reply
         mod.delete_Dark = delete_Dark
-        mod.delete_Dark = delete_REBEL
+        mod.delete_REBEL = delete_Dark
         mod.media_type = media_type
         sys.modules["Dark.utils"] = DarkWeb.utils
         sys.modules["Dark.util"] = DarkWeb.utils
