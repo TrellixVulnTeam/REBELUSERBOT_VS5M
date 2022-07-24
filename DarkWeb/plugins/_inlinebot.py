@@ -129,7 +129,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await delete_REBEL(event,
+            await delete_Dark(event,
               f"⚜️REBELBOT Menu Provider Is now Closed\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**", 5, link_preview=True
             )
         else:
