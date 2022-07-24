@@ -2,8 +2,8 @@ from telethon import events, utils
 from telethon.tl import types
 
 from DarkWeb import bot
-from DarkWeb.Config import Config
-from DarkWeb.plugins.sql_helper.snips_sql import (
+from DarkWeb.smex.DARK_Config import Config
+from DarkWeb.sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
     get_snips,
