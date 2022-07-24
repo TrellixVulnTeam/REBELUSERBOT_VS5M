@@ -12,7 +12,7 @@ from telethon import Button, custom, events
 from telethon.tl.functions.users import GetFullUserRequest
 
 from DarkWeb import bot
-DarkWeb.smex.DARK_Config import Config
+from DarkWeb.smex.DARK_Config import Config
 from DarkWeb.sql_helper.blacklist_assistant import (
     add_nibba_in_db,
     is_he_added,
