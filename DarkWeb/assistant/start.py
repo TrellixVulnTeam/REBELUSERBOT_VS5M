@@ -27,7 +27,7 @@ from DarkWeb.sql_helper.idadder_sql import (
 from var import Var
 
 Dark_ID = "config.DARKWEB_ID"
-
+BOT_PIC = "https://telegra.ph/file/2ea23de03e268b1d026c2.jpg"
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 path = Config.TMP_DOWNLOAD_DIRECTORY
@@ -72,7 +72,8 @@ async def start(event):
             pass
         elif not already_added(event.sender_id):
             add_usersid_in_db(event.sender_id)
-        await tgbot.send_message(
+        await tgbot.send_file(
+            BOT_PIC,
             event.chat_id,
             message=starttext,
             link_preview=False,
