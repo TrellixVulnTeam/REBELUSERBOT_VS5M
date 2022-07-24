@@ -1,5 +1,6 @@
-from hellbot.plugins.sql_helper import BASE, SESSION
 from sqlalchemy import Column, Integer, String
+
+from . import BASE, SESSION
 
 
 class Users(BASE):
@@ -22,17 +23,24 @@ class Users(BASE):
 Users.__table__.create(checkfirst=True)
 
 
-def add_id_in_db(message_id: int, chat_id: int, um_id: int):
+def add_user_to_db(message_id: int, chat_id: int, um_id: int):
     """add the message to the table"""
     __user = Users(message_id, str(chat_id), um_id)
     SESSION.add(__user)
     SESSION.commit()
 
 
-def its_userid(message_id: int):
+def get_user_id(message_id: int):
     """get the user_id from the message_id"""
     try:
         s__ = SESSION.query(Users).get(str(message_id))
         return int(s__.chat_id), s__.um_id
     finally:
         SESSION.close()
+
+
+def all_users():
+    """get all bot users"""
+    rizoel = SESSION.query(Users).all()
+    SESSION.close()
+    return rizoel
