@@ -27,7 +27,7 @@ from DarkWeb.sql_helper.idadder_sql import (
 from var import Var
 
 Dark_ID = "config.DARKWEB_ID"
-BOT_PIC = "https://telegra.ph/file/2ea23de03e268b1d026c2.jpg"
+BOT_PIC = Config.BOT_PIC or "https://telegra.ph/file/2ea23de03e268b1d026c2.jpg"
 Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 path = Config.TMP_DOWNLOAD_DIRECTORY
