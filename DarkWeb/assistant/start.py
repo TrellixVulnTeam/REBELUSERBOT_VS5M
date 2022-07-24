@@ -73,8 +73,8 @@ async def start(event):
         elif not already_added(event.sender_id):
             add_usersid_in_db(event.sender_id)
         await tgbot.send_file(
-            BOT_PIC,
             event.chat_id,
+            BOT_PIC,
             message=starttext,
             link_preview=False,
             buttons=[
