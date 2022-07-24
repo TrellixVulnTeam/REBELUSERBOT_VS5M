@@ -4,11 +4,13 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 
+from DarkWeb/smex/DARK_Config import Config
+
 # the secret configuration specific things
 from var import Var
-from DarkWeb.smex.DARK_Config import Config
 
 DB_URI = os.environ.get("DATABASE_URL", None)
+
 
 def start() -> scoped_session:
     db_url = (
@@ -30,4 +32,4 @@ except AttributeError as e:
     print(
         "DB_URI is not configured. Features depending on the database might have issues."
     )
-    print(str(e))
+    print(e)

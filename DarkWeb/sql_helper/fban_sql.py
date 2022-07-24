@@ -1,5 +1,5 @@
+from DarkWeb.sql_helper import BASE, SESSION
 from sqlalchemy import Column, String
-from DarkWeb.sql_helper import SESSION, BASE
 
 
 class fban(BASE):

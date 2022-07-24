@@ -1,5 +1,5 @@
 try:
-    from DarkWeb.sql_helper import SESSION, BASE
+    from DarkWeb.sql_helper import BASE, SESSION
 except ImportError:
     raise Exception("Hello!")
 

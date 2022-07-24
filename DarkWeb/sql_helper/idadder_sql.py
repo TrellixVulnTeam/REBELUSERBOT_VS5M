@@ -1,5 +1,6 @@
-from DarkWeb.sql_helper import BASE, SESSION
 from sqlalchemy import Column, String
+
+from . import BASE, SESSION
 
 
 class Moidata(BASE):
