@@ -74,11 +74,11 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         if event.query.user_id == bot.uid and query == "@REBELBOT_SUPPORT":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
-            result = await builder.article(
-                f"Hey! Only use .help please",
+            result = await builder.photo(
+                file=_file_to_replace,
                 text=f"Running REBELBOT\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
-                link_preview=True,
+                link_preview=False,
             )
         elif query.startswith("http"):
             part = query.split(" ")
@@ -91,7 +91,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         elif event.text=='':
             result = builder.article(
                 "@REBELBOT_SUPPORT",
-                text=f"""**Hey! This is [REBELBOT](https://t.me/REBELBOT_SUPPORT)\nYou can know more about me from the links given below 👇**""",
+                text=f"""**Hey! This is REBELBOTnYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
                         custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"),
@@ -123,7 +123,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF [REBELBOT](https://t.me/REBELBOT_SUPPORT) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Legenday AF REBELBOT __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=True,
         )
