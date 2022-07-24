@@ -18,9 +18,9 @@ DARK = bot.uid
 
 edit_time = 1
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/b765c0daec4a63c286e34.mp4"
+file1 = "https://telegra.ph/file/f81fb8ca000cf65364546.mp4"
 """ =======================CONSTANTS====================== """
-pm_caption = "  __**🔥🔥𝐑𝐄𝐁𝐄𝐋 𝐁𝐎𝐓  𝐈𝐒 𝐀𝐋𝐈𝐕𝐄🔥🔥**__\n\n" + "**━━━━━━━━━━━━━━━━━━━━━━**\n\n"
+pm_caption = "  __**🔥🔥∂αякωєв вσт ιѕ σηℓιηє🔥🔥**__\n\n" + "**━━━━━━━━━━━━━━━━━━━━━━**\n\n"
 
 
 pm_caption += (
@@ -30,9 +30,9 @@ pm_caption += "┏━━━━━━━━━━━━━\n"
 pm_caption += f"┣ ➫  Telethon ➣ `{version.__version__}` \n"
 pm_caption += f"┣ ➫ Version ➣ `{darkversion}`\n"
 pm_caption += f"┣ ➫ Sudo ➣ `{sudou}`\n"
-pm_caption += "┣ ➫ Channel ➣ [ᴊᴏɪɴ](https://t.me/DarkWeb_SUPPORT)\n"
-pm_caption += "┣ ➫ Creator ➣ [ʀᴇʙᴇʟ](https://t.me/DARK_IS_OP)\n"
-pm_caption += "┣ ➫ Support ➣ [sᴜᴘᴘᴏʀᴛ](https://t.me/DARKSSUPPORT)\n"
+pm_caption += "┣ ➫ Creator ➣ [Rebel](https://t.me/REBEL_IS_OP)\n"
+pm_caption += "┣ ➫ Channel ➣ [Join](https://t.me/DARK_WEB_UB)\n"
+pm_caption += "┣ ➫ Support ➣ [Support](https://t.me/DARK_WEB_BOT_SUPPORT)\n"
 pm_caption += "┗━━━━━━━━━━━━━━━\n"
 pm_caption += " [🔥𝚁𝙴𝙿𝙾🔥](https://github.com/TEAMDARKS/DarkWeb) 🔹 [📜𝙻𝚒𝚌𝚎𝚗𝚜𝚎📜](https://github.com/TEAMDARKS/DarkWeb/blob/main/LICENSE)"
 
@@ -118,7 +118,7 @@ async def amireallyalive(alive):
         await edit_or_reply(
             alive,
             f"**↼ Øwñêr ⇀ : {mention}\n"
-                f"____ʙᴏᴛ sᴛᴀᴛᴜs____\n"
+                f"**____ʙᴏᴛ sᴛᴀᴛᴜs____**\n"
             "╭──────────────\n"
             f"┣─ ➣ Telethon ➛ `1.24.0`\n"
             f"┣─ ➣ ɖaʀӄաɛɮ  ➛ `1.0`\n"
