@@ -74,6 +74,20 @@ import DarkWeb._core
 
 print(f"""Hello sir i am DarkWeb!! DarkWeb VERSION :- {Darkversion} YOUR DarkWeb IS READY! FOR CHECK YOUR BOT WORKING OR NOT PLEASE TYPE (.alive/.ping) ENJOY YOUR BOT! JOIN FOR MORE FUTURE UPDATES https://t.me/DARK_WEB_UB .""")
 
+
+async def REBEL_is_on():
+    try:
+        if Config.DARKWEB_ID != 0:
+            await bot.send_file(
+                Config.DARKWEB_ID,
+                REBEL_PIC,
+                caption=f"༆ʟɛɢɛռɖaʀʏ ᴀғ ʀᴇʙᴇʟʙᴏᴛ༆\n\n**ᴠᴇʀsɪᴏɴ ➪ {Darkversion}**\n\n𝐓𝐲𝐩𝐞 `.ping` or `.alive` ᴛᴏ ᴄʜᴇᴄᴋ! \n\n ᴊᴏɪɴ [ʀᴇʙᴇʟʙᴏᴛ ᴄʜᴀᴛɪɴɢ](t.me/REBEL_BOT_CHATING) ᴛᴏ ǫᴜᴇʀʏ & ᴊᴏɪɴ [ʀᴇʙᴇʟʙᴏᴛ ᴜᴘᴅᴀᴛᴇ](t.me/REBELBOT_SUPPORT) ᴛᴏ ᴋɴᴏᴡ ʀᴇɢʀᴀᴅɪɴɢ ᴜᴘᴅᴀᴛᴇ ᴀɴᴅ ᴀʙᴏᴜᴛ ʀᴇʙᴇʟʙᴏᴛ",
+            )
+    except Exception as e:
+        LOGS.info(str(e))
+
+bot.loop.create_task(REBEL_is_on())
+
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
