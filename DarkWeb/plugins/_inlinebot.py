@@ -73,7 +73,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.photo(
                 file=_file_to_replace,
-                text=f"**Running DarkBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}\ncommand : {len(CMD_HELP_BOT)}",
+                text=f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -120,7 +120,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF DarkBOT __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\ncommand : {len(CMD_HELP_BOT)}\n**page:** {page + 1}/{veriler[0]}",
+            f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
             buttons=veriler[1],
             link_preview=True,
         )
