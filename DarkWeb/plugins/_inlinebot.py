@@ -74,7 +74,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.photo(
                 file=_file_to_replace,
-                text=f"༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
+                text=f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -86,63 +86,70 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
                 buttons=[[custom.Button.url("URL", part[0])]],
                 link_preview=True,
             )
-        elif event.text=='':
+        elif event.text == "":
             result = builder.article(
                 "@REBELBOT_SUPPORT",
-                text=f"""**Hey! This is  DARK WEB \nYou can know more about me from the links given below 👇**""",
+                text="**Hey!This is [REBELBOT.](https://t.me/REBELBOT_SUPPORT)\nYou can know more about me from the links given below 👇**",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DARK_WEB_UB"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/DARK_WEB_BOT_SUPPORT"
+                            "🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"
+                        ),
+                        custom.Button.url(
+                            "⚡ GROUP ⚡", "https://t.me/REBEL_BOT_CHATING"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "🔰 REPO 🔰", "https://github.com/REBEL75/REBELBOTOP"),
-                        custom.Button.url
-                    (
-                            "🔰 TUTORIAL 🔰", ""
-                    )
+                            "🔰 REPO 🔰", "https://github.com/REBEL75/REBELSBOT"
+                        ),
+                        custom.Button.url("🔰 TUTORIAL 🔰", ""),
                     ],
                 ],
-                link_preview=True,
+                link_preview=False,
             )
+
         await event.answer([result] if result else None)
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
+                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}**",
+            f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
             buttons=veriler[1],
-            link_preview=True,
+            link_preview=False,
         )
-        
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await delete_REBEL(event,
-              f"⚜️REBELBOT Menu Provider Is now Closed\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**", 5, link_preview=True
+            await delete_REBEL(
+                event,
+                "⚜️REBELBOT Menu Provider Is now Closed⚜️\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**",
+                5,
+                link_preview=False,
             )
+
         else:
-            REBEL_alert = "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™"
+            REBEL_alert = (
+                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ"
+            )
             await event.answer(REBEL_alert, cache_time=0, alert=True)
-          
+
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
     )
     async def Information(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
+                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ",
                 cache_time=0,
                 alert=True,
             )
@@ -152,10 +159,11 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         try:
             buttons = [
                 custom.Button.inline(
-                    "🔷" + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
+                    f"🔷{cmd[0]}", data=f"commands[{commands}[{page}]]({cmd[0]})"
                 )
                 for cmd in CMD_HELP_BOT[commands]["commands"].items()
             ]
+
         except KeyError:
             return await event.answer(
                 "No Description is written for this plugin", cache_time=0, alert=True
@@ -173,9 +181,9 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         callbackquery.CallbackQuery(data=compile(b"commands\[(.*)\[(\d*)\]\]\((.*)\)"))
     )
     async def commands(event):
-        if not event.query.user_id == bot.uid:
+        if event.query.user_id != bot.uid:
             return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN REBELBOT AND USE. © REBELBOT ™",
+                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ",
                 cache_time=0,
                 alert=True,
             )
@@ -186,14 +194,14 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
 
         result = f"**📗 File:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
+            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 result += f"**⚠️ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
         else:
             result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
+            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
                 result += f"**⚠️ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
@@ -207,7 +215,9 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             result += f"**💬 Explanation:** `{command['usage']}`\n\n"
         else:
             result += f"**💬 Explanation:** `{command['usage']}`\n"
-            result += f"**⌨️ For Example:** `{HANDLER[:1]}{command['example']}`\n\n"
+            result += (
+                f"**⌨️ For Example:** `{HANDLER[:1]}{command['example']}`\n\n"
+            )
 
         await event.edit(
             result,
@@ -216,3 +226,4 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             ],
             link_preview=False,
         )
+
