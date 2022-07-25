@@ -18,13 +18,6 @@ chuty = "Config.BOT_USERNAME"
 REBEL_PIC = "https://telegra.ph/file/31bfaed9335e61d61b084.jpg"
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
 
-Buttons=[            
-                 [
-                    Button.url(" αѕѕιѕтαηт ", "https://t.me/{BOT_USERNAME}?start=True"),
-                    Button.url(" ѕυρρσят ¢нαт ", "https://t.me/DARK_WEB_BOT_SUPPORT"),
-                ],
-            ],
-
 os.system("pip install -U telethon")
 
 async def add_bot(bot_token):
@@ -91,7 +84,12 @@ async def DARK_is_on():
                 Config.DARKWEB_ID,
                 REBEL_PIC,
                 caption=f"ɖaʀӄաɛɮ ɮօȶ ɪs ᴅᴇᴘʟᴏʏᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ \n\n ᴛʀʏ ᴄᴏᴍᴍᴀɴᴅ .ping ᴀɴᴅ .dark \n\n ᴀɴʏ ǫᴜᴇʀʏ/ɪssᴜᴇ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ/ɪssᴜᴇ \n\n ᴛʜᴀɴᴋs ғᴏʀ ᴅᴇᴘʟᴏʏɪɴɢ",
-                buttons=Buttons
+                buttons=[            
+                 [
+                    Button.url(" αѕѕιѕтαηт ", "https://t.me/{chuty}?start=True"),
+                    Button.url(" ѕυρρσят ¢нαт ", "https://t.me/DARK_WEB_BOT_SUPPORT"),
+                ],
+            ],
             )
     except Exception as e:
         LOGS.info(str(e))
