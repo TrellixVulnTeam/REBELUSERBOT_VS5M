@@ -13,7 +13,7 @@ from pathlib import Path
 import asyncio
 import telethon.utils
 
-
+REBEL_PIC = "https://telegra.ph/file/31bfaed9335e61d61b084.jpg"
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
 
 os.system("pip install -U telethon")
