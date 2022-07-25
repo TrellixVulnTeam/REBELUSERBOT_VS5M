@@ -62,13 +62,13 @@ def button(page, modules):
     return [max_pages, buttons]
  
     modules = CMD_HELP
-if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
+if Var.BOT_USERNAME is not None and tgbot is not None:
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@DarkBOT_SUPPORT":
+        if event.query.user_id == bot.uid and query == "@DARKWEB_HELP":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
@@ -88,7 +88,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         elif event.text=='':
             result = builder.article(
                 "@DarkBOT_SUPPORT",
-                text=f"""**Hey![🤗]({Dark_help_pic}) This is [DarkBOT.](https://t.me/DarkBOT_SUPPORT)\nYou can know more about me from the links given below 👇**""",
+                text=f"""**Hey! This is [DarkBOT.](https://t.me/DarkBOT_SUPPORT)\nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
                         custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DarkBOT_SUPPORT"),
@@ -129,7 +129,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_Dark(event,
-              f"⚜️DarkBOT Menu Provider Is now Closed[⚜️]({Dark_help_pic})\n\n         **[© DarkBOT ™](t.me/DarkBOT_SUPPORT)**[⚡🔥]({Dark_help_pic})", 5, link_preview=True
+              f"⚜️DarkBOT Menu Provider Is now Closed⚜️\n\n         **[© DarkBOT ™](t.me/DarkBOT_SUPPORT)**[⚡🔥]({Dark_help_pic})", 5, link_preview=True
             )
         else:
             Dark_alert = "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ ™"
