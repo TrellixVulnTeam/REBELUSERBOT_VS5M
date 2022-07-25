@@ -76,7 +76,7 @@ import DarkWeb._core
 
 print(f"""Hello sir i am DarkWeb!! DarkWeb VERSION :- {Darkversion} YOUR DarkWeb IS READY! FOR CHECK YOUR BOT WORKING OR NOT PLEASE TYPE (.alive/.ping) ENJOY YOUR BOT! JOIN FOR MORE FUTURE UPDATES https://t.me/DARK_WEB_UB .""")
 
-xnxx = f"ɖaʀӄաɛɮ ɮօȶ ɪs ᴅᴇᴘʟᴏʏᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ \n\n ᴛʀʏ ᴄᴏᴍᴍᴀɴᴅ .ping ᴀɴᴅ .dark \n\n ᴀɴʏ ǫᴜᴇʀʏ/ɪssᴜᴇ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ/ɪssᴜᴇ \n\n ᴛʜᴀɴᴋs ғᴏʀ ᴅᴇᴘʟᴏʏɪɴɢ"
+xnxx = f"ɖaʀӄաɛɮ ɮօȶ ɪs ᴅᴇᴘʟᴏʏᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ \n\n ᴛʀʏ ᴄᴏᴍᴍᴀɴᴅ `.ping` ᴀɴᴅ `.dark` \n\n ᴀɴʏ ǫᴜᴇʀʏ/ɪssᴜᴇ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ/ɪssᴜᴇ \n\n ᴛʜᴀɴᴋs ғᴏʀ ᴅᴇᴘʟᴏʏɪɴɢ"
 # xvideo = [            
 #                  [
 #                     Button.url(" αѕѕιѕтαηт ", "https://t.me/{chuty}?start=True"),
