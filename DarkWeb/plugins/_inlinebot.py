@@ -73,7 +73,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.photo(
                 file=_file_to_replace,
-                text=f"**Running DarkBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"**༆ {mention} ༆**\n\n__Total Module installed__ ⭆ `{len(CMD_HELP)}`\n**page⭆ ** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
