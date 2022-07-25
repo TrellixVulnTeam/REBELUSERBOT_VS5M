@@ -120,7 +120,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF DarkBOT __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Legenday AF DarkBOT __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\ncommand : {len(CMD_HELP_BOT)}\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=True,
         )
