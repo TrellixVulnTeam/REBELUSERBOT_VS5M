@@ -20,7 +20,7 @@ LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
 
 Buttons=[
                 [
-                    custom.Button.inline("αѕѕιѕтαηт", url="http://t.me/{BOT_USERNAME}?start=True"),
+                 #   custom.Button.inline("αѕѕιѕтαηт", url="http://t.me/{BOT_USERNAME}?start=True"),
                     custom.Button.inline("ѕυρρσят ¢нαт", url="https://t.me/DARK_WEB_BOT_SUPPORT"),
                 ],
             ],
