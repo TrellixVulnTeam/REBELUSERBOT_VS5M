@@ -88,12 +88,12 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         elif event.text=='':
             result = builder.article(
                 "@DarkBOT_SUPPORT",
-                text=f"""**Hey! This is [DarkBOT.](https://t.me/DarkBOT_SUPPORT)\nYou can know more about me from the links given below 👇**""",
+                text=f"""**Hey! This is DarkBOT\nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DarkBOT_SUPPORT"),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DARK_WEB_UB"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/Dark_BOT_CHATING"
+                            "⚡ GROUP ⚡", "https://t.me/DARK_WEB_BOT_SUPPORT"
                         ),
                     ],
                     [
