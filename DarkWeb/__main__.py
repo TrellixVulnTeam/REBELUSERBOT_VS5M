@@ -14,12 +14,13 @@ from DarkWeb import LOAD_PLUG, darkversion
 from pathlib import Path
 import telethon.utils
 
+chuty = "Config.BOT_USERNAME"
 REBEL_PIC = "https://telegra.ph/file/31bfaed9335e61d61b084.jpg"
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
 
 Buttons=[
                 [
-                    custom.Button.inline("αѕѕιѕтαηт", url="http://t.me/{Config.BOT_USERNAME}?start=True"),
+                    custom.Button.inline("αѕѕιѕтαηт", url="http://t.me/{chuty}?start=True"),
                     custom.Button.inline("ѕυρρσят ¢нαт", url="https://t.me/DARK_WEB_BOT_SUPPORT"),
                 ],
             ],
