@@ -1,20 +1,28 @@
-from DarkWeb import bot
+import os
 from sys import argv
 import sys
+import asyncio
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-import os
+from telethon import Button, TelegramClient, custom, events
 from telethon import TelegramClient
 from var import Var
 from DarkWeb.smex.DARK_Config import Config
+from DarkWeb import bot
 from DarkWeb import *
 from DarkWeb.utils import load_module, start_assistant
 from DarkWeb import LOAD_PLUG, darkversion
 from pathlib import Path
-import asyncio
 import telethon.utils
 
 REBEL_PIC = "https://telegra.ph/file/31bfaed9335e61d61b084.jpg"
 LOAD_ASSISTANT = os.environ.get("LOAD_ASSISTANT", True)
+
+Buttons=[
+                [
+                    custom.Button.inline("αѕѕιѕтαηт", url="t.me/{Config.BOT_USERNAME}?start"),
+                    custom.Button.inline("ѕυρρσят ¢нαт", url="https://t.me/DARK_WEB_BOT_SUPPORT"),
+                ],
+            ],
 
 os.system("pip install -U telethon")
 
@@ -82,6 +90,7 @@ async def DARK_is_on():
                 Config.DARKWEB_ID,
                 REBEL_PIC,
                 caption=f"ɖaʀӄաɛɮ ɮօȶ ɪs ᴅᴇᴘʟᴏʏᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ \n\n ᴛʀʏ ᴄᴏᴍᴍᴀɴᴅ .ping ᴀɴᴅ .dark \n\n ᴀɴʏ ǫᴜᴇʀʏ/ɪssᴜᴇ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ/ɪssᴜᴇ \n\n ᴛʜᴀɴᴋs ғᴏʀ ᴅᴇᴘʟᴏʏɪɴɢ",
+                buttons=Buttons
             )
     except Exception as e:
         LOGS.info(str(e))
