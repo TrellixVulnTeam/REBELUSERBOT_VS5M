@@ -71,11 +71,11 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         if event.query.user_id == bot.uid and query == "@DARKWEB_HELP":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
-            result = await builder.article(
-                f"Hey! Only use .help please",
+            result = await builder.photo(
+                file=_file_to_replace,
                 text=f"**Running DarkBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
-                link_preview=True,
+                link_preview=False,
             )
         elif query.startswith("http"):
             part = query.split(" ")
