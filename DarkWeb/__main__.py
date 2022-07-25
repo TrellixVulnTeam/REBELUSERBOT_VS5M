@@ -86,7 +86,7 @@ async def DARK_is_on():
                 caption=f"ɖaʀӄաɛɮ ɮօȶ ɪs ᴅᴇᴘʟᴏʏᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ \n\n ᴛʀʏ ᴄᴏᴍᴍᴀɴᴅ .ping ᴀɴᴅ .dark \n\n ᴀɴʏ ǫᴜᴇʀʏ/ɪssᴜᴇ ᴊᴏɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ᴀsᴋ ʏᴏᴜʀ ǫᴜᴇʀʏ/ɪssᴜᴇ \n\n ᴛʜᴀɴᴋs ғᴏʀ ᴅᴇᴘʟᴏʏɪɴɢ",
                 buttons=[            
                  [
-                    Button.url(" αѕѕιѕтαηт ", "https://t.me/{chuty}?start=True"),
+                   # Button.url(" αѕѕιѕтαηт ", "https://t.me/{chuty}?start=True"),
                     Button.url(" ѕυρρσят ¢нαт ", "https://t.me/DARK_WEB_BOT_SUPPORT"),
                 ],
             ],
