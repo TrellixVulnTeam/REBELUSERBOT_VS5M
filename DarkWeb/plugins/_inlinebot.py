@@ -11,9 +11,9 @@ from DarkWeb.cmdhelp import *
 from Dark.utils import *
 from DarkWeb.smex.DARK_Config import Config
 
-REBEL_help_pic = Config.HELP_PIC
-REBEL_row = Config.BUTTONS_IN_HELP
-REBEL_emoji = Config.EMOJI_IN_HELP
+Dark_help_pic = Config.HELP_PIC
+Dark_row = Config.BUTTONS_IN_HELP
+Dark_emoji = Config.EMOJI_IN_HELP
 HANDLER = Config.HNDLR
 
 
@@ -27,9 +27,8 @@ if REBEL_help_pic := Config.HELP_PIC:
 else:
     _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
 
-    
 def button(page, modules):
-    Row = REBEL_row
+    Row = Dark_row
     Column = 3
 
     modules = sorted([modul for modul in modules if not modul.startswith("_")])
@@ -42,7 +41,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"{REBEL_emoji} " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"{Dark_emoji} " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -50,33 +49,33 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏰᎯᏣᏦ {REBEL_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+               f"◀️ ᏰᎯᏣᏦ {Dark_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{REBEL_emoji} ❌ {REBEL_emoji}•", data="close"
+               f"•{Dark_emoji} ❌ {Dark_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{REBEL_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"{Dark_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
     return [max_pages, buttons]
-    
+ 
     modules = CMD_HELP
-if Var.BOT_USERNAME is not None and tgbot is not None:
+if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@DARKWEB_HELP":
+        if event.query.user_id == bot.uid and query == "@DarkBOT_SUPPORT":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
-            result = await builder.photo(
-                file=_file_to_replace,
-                text=f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
+            result = await builder.article(
+                f"Hey! Only use .help please",
+                text=f"**Running DarkBOT**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
-                link_preview=False,
+                link_preview=True,
             )
         elif query.startswith("http"):
             part = query.split(" ")
@@ -86,70 +85,63 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
                 buttons=[[custom.Button.url("URL", part[0])]],
                 link_preview=True,
             )
-        elif event.text == "":
+        elif event.text=='':
             result = builder.article(
-                "@REBELBOT_SUPPORT",
-                text="**Hey!This is [REBELBOT.](https://t.me/REBELBOT_SUPPORT)\nYou can know more about me from the links given below 👇**",
+                "@DarkBOT_SUPPORT",
+                text=f"""**Hey![🤗]({Dark_help_pic}) This is [DarkBOT.](https://t.me/DarkBOT_SUPPORT)\nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/DarkBOT_SUPPORT"),
                         custom.Button.url(
-                            "🔥 CHANNEL 🔥", "https://t.me/REBELBOT_SUPPORT"
-                        ),
-                        custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/REBEL_BOT_CHATING"
+                            "⚡ GROUP ⚡", "https://t.me/Dark_BOT_CHATING"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "🔰 REPO 🔰", "https://github.com/REBEL75/REBELSBOT"
-                        ),
-                        custom.Button.url("🔰 TUTORIAL 🔰", ""),
+                            "🔰 REPO 🔰", "https://github.com/Dark75/DarkBOTOP"),
+                        custom.Button.url
+                    (
+                            "🔰 TUTORIAL 🔰", ""
+                    )
                     ],
                 ],
-                link_preview=False,
+                link_preview=True,
             )
-
         await event.answer([result] if result else None)
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
     async def page(event):
-        if event.query.user_id != bot.uid:
+        if not event.query.user_id == bot.uid:
             return await event.answer(
-                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ",
+                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ ™",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**༆ {mention} ༆ \n⭐ 𝚃𝚘𝚝𝚊𝚕 𝙼𝚘𝚍𝚞𝚕𝚎𝚜 𝙸𝚗𝚜𝚝𝚊𝚕𝚕𝚎𝚍⭆:`{len(CMD_HELP)}`\n**📖 Pαցҽ⭆:** 1/{veriler[0]}",
+            f"**Legenday AF DarkBOT __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
-            link_preview=False,
+            link_preview=True,
         )
-
+        
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await delete_REBEL(
-                event,
-                "⚜️REBELBOT Menu Provider Is now Closed⚜️\n\n         **[© REBELBOT ™](t.me/REBELBOT_SUPPORT)**",
-                5,
-                link_preview=False,
+            await delete_Dark(event,
+              f"⚜️DarkBOT Menu Provider Is now Closed[⚜️]({Dark_help_pic})\n\n         **[© DarkBOT ™](t.me/DarkBOT_SUPPORT)**[⚡🔥]({Dark_help_pic})", 5, link_preview=True
             )
-
         else:
-            REBEL_alert = (
-                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ"
-            )
-            await event.answer(REBEL_alert, cache_time=0, alert=True)
-
+            Dark_alert = "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ ™"
+            await event.answer(Dark_alert, cache_time=0, alert=True)
+          
     @tgbot.on(
         callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
     )
     async def Information(event):
-        if event.query.user_id != bot.uid:
+        if not event.query.user_id == bot.uid:
             return await event.answer(
-                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ",
+                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ ™",
                 cache_time=0,
                 alert=True,
             )
@@ -159,11 +151,10 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         try:
             buttons = [
                 custom.Button.inline(
-                    f"🔷{cmd[0]}", data=f"commands[{commands}[{page}]]({cmd[0]})"
+                    "🔷" + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
                 )
                 for cmd in CMD_HELP_BOT[commands]["commands"].items()
             ]
-
         except KeyError:
             return await event.answer(
                 "No Description is written for this plugin", cache_time=0, alert=True
@@ -181,9 +172,9 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
         callbackquery.CallbackQuery(data=compile(b"commands\[(.*)\[(\d*)\]\]\((.*)\)"))
     )
     async def commands(event):
-        if event.query.user_id != bot.uid:
+        if not event.query.user_id == bot.uid:
             return await event.answer(
-                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ",
+                "ʏօʊ ƈaռ'ȶ ʊֆɛ \n @ ɖaʀӄաɛɮ ™",
                 cache_time=0,
                 alert=True,
             )
@@ -194,14 +185,14 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
 
         result = f"**📗 File:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
-            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
+            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 result += f"**⚠️ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
         else:
             result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-            if CMD_HELP_BOT[cmd]["info"]["warning"] != "":
+            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**⚠️ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
@@ -215,9 +206,7 @@ if Var.BOT_USERNAME is not None and tgbot is not None:
             result += f"**💬 Explanation:** `{command['usage']}`\n\n"
         else:
             result += f"**💬 Explanation:** `{command['usage']}`\n"
-            result += (
-                f"**⌨️ For Example:** `{HANDLER[:1]}{command['example']}`\n\n"
-            )
+            result += f"**⌨️ For Example:** `{HANDLER[:1]}{command['example']}`\n\n"
 
         await event.edit(
             result,
