@@ -25,7 +25,7 @@ if REBEL_help_pic := Config.HELP_PIC:
     _file_to_replace = REBEL_help_pic
     REBEL_help_pic = REBEL_help_pic
 else:
-    _file_to_replace = "https://telegra.ph/file/feb5c9a2fcb70a83dfb00.jpg"
+    _file_to_replace = "https://telegra.ph/file/fda905425952724bc9277.jpg"
 
 def button(page, modules):
     Row = Dark_row
